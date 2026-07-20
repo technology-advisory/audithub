@@ -49,7 +49,7 @@ window.AUDITORIA365_USERS = [
   },
   {
     "id": "usr-reader-001",
-    "name": "Cliente Consulta",
+    "name": "Usuario Solo Lectura",
     "email": "cliente@auditoria365.local",
     "role": "read-only",
     "clientIds": [
@@ -61,14 +61,14 @@ window.AUDITORIA365_USERS = [
     "active": true,
     "auth": {
       "iterations": 310000,
-      "salt": "vgnOAy98/7mVClSYFqa+Ig==",
-      "verifier": "1nbya0N+PwHO99TQVsiqgUDBebaUPZPWge9RseMvjGU="
+      "salt": "D5CzcMbhP8IOy2gFMniAKQ==",
+      "verifier": "2dS7wijsbXbMDR7LsOpWSvXwBhGHrXJYx/dIBbjqX/4="
     },
     "vault": {
       "iterations": 310000,
-      "salt": "k/YnyOiQ6N7ERwjcvMHeMQ==",
-      "iv": "pdC4vJbadJlKAcBj",
-      "wrappedKey": "Oaf0a7ETKOGMdMM4Ym1Fxei6b0i78zx3YucwLE2yUA3x/VzsAtCMNbQXoj5WP1aD"
+      "salt": "+Idha8itLGyzNKIL9tqQVA==",
+      "iv": "IGdeBRmAaZpqVyhI",
+      "wrappedKey": "Uh/BHTrV0RW9mp6hfYaH0btodvZtooIijpq8JKM2pN4LTqul8B0m692CseurNOcU"
     }
   }
 ];

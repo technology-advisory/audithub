@@ -10,7 +10,7 @@
     'lead-auditor': ['view_clients','view_audits','edit_audit','manage_audits','view_frameworks','view_documents','edit_documents','view_risks','edit_risks','view_findings','edit_findings','view_actions','edit_actions','view_reports'],
     auditor: ['view_clients','view_audits','edit_audit','view_frameworks','view_documents','edit_documents','view_risks','edit_risks','view_findings','edit_findings','view_actions','edit_actions','view_reports'],
     client: ['view_audits','view_documents','edit_documents','view_findings','view_actions','view_reports'],
-    'read-only': ['view_audits','view_documents','view_risks','view_findings','view_actions','view_reports']
+    'read-only': ['view_clients','view_audits','view_frameworks','view_documents','view_risks','view_findings','view_actions','view_reports']
   };
   function read(){try{const s=JSON.parse(localStorage.getItem(SESSION_KEY));if(!s||Date.now()>s.expiresAt){localStorage.removeItem(SESSION_KEY);return null}return s}catch{return null}}
   function write(s){localStorage.setItem(SESSION_KEY,JSON.stringify(s));return s}
