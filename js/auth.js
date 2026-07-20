@@ -2,66 +2,71 @@
   const SESSION_KEY = 'auditoria365-session-v1';
   const HOURS = 8;
   const USERS_KEY = 'auditoria365-managed-users-v1';
-  const ADMIN_ID = 'usr-admin-001';
-  const ADMIN_LOCAL_EMAIL = 'admin@auditoria365.local';
-  const ADMIN_OLD_CLOUD_EMAILS = ['macarriazo@gmail.com'];
-  const ADMIN_CLOUD_EMAIL = 'thor.elpoderoso.esp.technical@gmail.com';
 
   function norm(value){ return String(value || '').trim().toLowerCase(); }
-
-  function migrateManagedUsers(){
-    let stored;
-    try{
-      const raw=localStorage.getItem(USERS_KEY);
-      if(!raw) return false;
-      stored=JSON.parse(raw);
-    }catch{
-      return false;
-    }
-    if(!Array.isArray(stored)) return false;
-
-    const target=norm(ADMIN_CLOUD_EMAIL);
-    const adminIndex=stored.findIndex(u=>u && (u.id===ADMIN_ID || norm(u.email)===norm(ADMIN_LOCAL_EMAIL)));
-    if(adminIndex<0) return false;
-
-    const admin=stored[adminIndex];
-    const current=norm(admin.cloudEmail);
-    if(current===target) return false;
-    if(!ADMIN_OLD_CLOUD_EMAILS.map(norm).includes(current)) return false;
-
-    const targetOwnedByAnother=stored.some((u,index)=>index!==adminIndex && u && (norm(u.cloudEmail)===target || norm(u.email)===target));
-    if(targetOwnedByAnother){
-      console.warn('Auditoria365: no se migra el correo Cloudflare del administrador porque ya está asignado a otro usuario.');
-      return false;
-    }
-
-    stored[adminIndex]={...admin,cloudEmail:ADMIN_CLOUD_EMAIL};
-    localStorage.setItem(USERS_KEY,JSON.stringify(stored));
-    return true;
-  }
   function isCloudHost(){
     const h = location.hostname.toLowerCase();
     return h === 'auditoria365.opentrust.group';
   }
-  function users(){
-    migrateManagedUsers();
-    let base=(window.AUDITORIA365_USERS||[]).map(x=>({...x}));
-    try{
-      let overrides=JSON.parse(localStorage.getItem(USERS_KEY)||'[]');
-      for(let u of overrides){
-        let i=base.findIndex(x=>x.id===u.id);
-        if(i>=0) base[i]={...base[i],...u}; else base.push(u);
+  const ADMIN_ID='usr-admin-001';
+  const ADMIN_LOCAL_EMAIL='admin@auditoria365.local';
+  const ADMIN_OLD_CLOUD_EMAIL='macarriazo@gmail.com';
+  const ADMIN_DEFAULT_CLOUD_EMAIL='thor.elpoderoso.esp.technical@gmail.com';
+
+  function isCanonicalAdmin(user){
+    return !!user && (user.id===ADMIN_ID || norm(user.email)===ADMIN_LOCAL_EMAIL);
+  }
+  function normalizeManagedUsers(rawList){
+    const source=Array.isArray(rawList)?rawList:[];
+    const cleaned=[];
+    let adminOverride=null;
+    for(const item of source){
+      if(!item||typeof item!=='object') continue;
+      if(isCanonicalAdmin(item)){
+        adminOverride={...(adminOverride||{}),...item,id:ADMIN_ID,email:ADMIN_LOCAL_EMAIL};
+        continue;
       }
-    }catch{}
-    return base;
+      const existing=cleaned.findIndex(x=>x.id===item.id);
+      if(existing>=0) cleaned[existing]={...cleaned[existing],...item}; else cleaned.push(item);
+    }
+    if(adminOverride){
+      if(norm(adminOverride.cloudEmail)===ADMIN_OLD_CLOUD_EMAIL) adminOverride.cloudEmail=ADMIN_DEFAULT_CLOUD_EMAIL;
+      cleaned.unshift(adminOverride);
+    }
+    return cleaned;
+  }
+  function readManagedUsers(){
+    let raw=[];
+    try{raw=JSON.parse(localStorage.getItem(USERS_KEY)||'[]')}catch{}
+    const normalized=normalizeManagedUsers(raw);
+    if(JSON.stringify(raw)!==JSON.stringify(normalized)) localStorage.setItem(USERS_KEY,JSON.stringify(normalized));
+    return normalized;
+  }
+  function users(){
+    let base=(window.AUDITORIA365_USERS||[]).map(x=>({...x}));
+    const baseAdmin=base.find(isCanonicalAdmin);
+    if(baseAdmin&&norm(baseAdmin.cloudEmail)===ADMIN_OLD_CLOUD_EMAIL) baseAdmin.cloudEmail=ADMIN_DEFAULT_CLOUD_EMAIL;
+    for(let u of readManagedUsers()){
+      let i=base.findIndex(x=>x.id===u.id || (isCanonicalAdmin(x)&&isCanonicalAdmin(u)));
+      if(i>=0) base[i]={...base[i],...u}; else base.push(u);
+    }
+    const seen=new Set();
+    return base.filter(u=>{const key=isCanonicalAdmin(u)?ADMIN_ID:u.id;if(seen.has(key))return false;seen.add(key);return true});
   }
   function persistUser(user){
-    let list=[];
-    try{ list=JSON.parse(localStorage.getItem(USERS_KEY)||'[]'); }catch{}
-    let i=list.findIndex(x=>x.id===user.id);
-    if(i>=0) list[i]=user; else list.push(user);
-    localStorage.setItem(USERS_KEY,JSON.stringify(list));
-    return user;
+    let list=readManagedUsers();
+    let saved={...user};
+    if(isCanonicalAdmin(saved)){
+      saved.id=ADMIN_ID;
+      saved.email=ADMIN_LOCAL_EMAIL;
+      list=list.filter(x=>!isCanonicalAdmin(x));
+      list.unshift(saved);
+    }else{
+      let i=list.findIndex(x=>x.id===saved.id);
+      if(i>=0) list[i]=saved; else list.push(saved);
+    }
+    localStorage.setItem(USERS_KEY,JSON.stringify(normalizeManagedUsers(list)));
+    return saved;
   }
   function listUsers(){ return users().map(({auth,vault,...u})=>u); }
 
@@ -186,6 +191,6 @@
   window.A365Auth={
     read,login,loginCloud,cloudIdentity,userForCloudEmail,isCloudHost,logout,clearSession,
     can,canClient,canAudit,setContext,requireAuth,listUsers,updateProfile,changePassword,
-    createUser,updateUser,setUserActive,migrateManagedUsers,SESSION_KEY
+    createUser,updateUser,setUserActive,SESSION_KEY
   };
 })();

@@ -7,12 +7,14 @@
 
   function loadApplication(){
     document.getElementById('cloudGate')?.remove();
+    const loading=document.getElementById('authorizedLoading');
+    if(loading) loading.style.display='grid';
     document.querySelector('link[href*="assets/login.css"]')?.remove();
     const files=[
-      ['script','js/security-backup.js?v=15.44'],
-      ['script','data/data.js?v=15.44'],
-      ['script','js/vendor/xlsx.full.min.js?v=15.44'],
-      ['script','js/app.js?v=15.44']
+      ['script','js/security-backup.js?v=15.45'],
+      ['script','data/data.js?v=15.45'],
+      ['script','js/vendor/xlsx.full.min.js?v=15.45'],
+      ['script','js/app.js?v=15.45']
     ];
     const next=i=>{
       if(i>=files.length)return;

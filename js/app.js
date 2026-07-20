@@ -444,14 +444,18 @@ async function downloadBlob(id){if(!requireWrite('Tu rol es de solo lectura. Pue
 function b64Bytes(v){return Uint8Array.from(atob(v),c=>c.charCodeAt(0))}
 async function bootstrapEncryptedDemo(){let records=window.A365_ENCRYPTED_DEMO_RECORDS||[];for(const r of records){if(await idbGet(r.storageId))continue;await idbPut(r.storageId,{version:r.version,algorithm:r.algorithm,iv:r.iv,ciphertext:b64Bytes(r.ciphertext).buffer,sha256:r.sha256,mimeType:r.mimeType,originalSize:r.originalSize,createdAt:r.createdAt})}}
 async function preloadAuthorizedEvidence(){
-  const docs=db.documents.filter(canAccessDocument),status=document.getElementById('authorizedLoadStatus'),bar=document.getElementById('authorizedLoadBar');
+  const docs=db.documents.filter(canAccessDocument),status=document.getElementById('authorizedLoadStatus'),bar=document.getElementById('authorizedLoadBar'),percent=document.getElementById('authorizedLoadPercent');
   let loaded=0,failed=0;
+  if(bar)bar.style.width='0%';
+  if(percent)percent.textContent='0%';
   for(let i=0;i<docs.length;i++){
     try{await ensureEvidenceRecord(docs[i]);loaded++}catch(e){failed++;console.error('No se pudo preparar la evidencia autorizada',docs[i]?.name,e)}
     const pct=Math.round(((i+1)/Math.max(1,docs.length))*100);
     if(status)status.textContent=`Preparando ${i+1} de ${docs.length} evidencias autorizadas…`;
     if(bar)bar.style.width=pct+'%';
+    if(percent)percent.textContent=pct+'%';
   }
+  if(!docs.length){if(status)status.textContent='No hay evidencias que preparar para este usuario.';if(bar)bar.style.width='100%';if(percent)percent.textContent='100%';}
   return {total:docs.length,loaded,failed};
 }
 async function initializeAuthorizedSession(){
