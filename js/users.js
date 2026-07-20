@@ -3,7 +3,7 @@ window.AUDITORIA365_USERS = [
     "id": "usr-admin-001",
     "name": "Miguel Ángel Carriazo",
     "email": "admin@auditoria365.local",
-    "cloudEmail": "macarriazo@gmail.com",
+    "cloudEmail": "thor.elpoderoso.esp.technical@gmail.com",
     "role": "admin",
     "clientIds": [
       "*"

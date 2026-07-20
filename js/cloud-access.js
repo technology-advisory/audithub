@@ -9,10 +9,10 @@
     document.getElementById('cloudGate')?.remove();
     document.querySelector('link[href*="assets/login.css"]')?.remove();
     const files=[
-      ['script','js/security-backup.js?v=15.43'],
-      ['script','data/data.js?v=15.43'],
-      ['script','js/vendor/xlsx.full.min.js?v=15.43'],
-      ['script','js/app.js?v=15.43']
+      ['script','js/security-backup.js?v=15.44'],
+      ['script','data/data.js?v=15.44'],
+      ['script','js/vendor/xlsx.full.min.js?v=15.44'],
+      ['script','js/app.js?v=15.44']
     ];
     const next=i=>{
       if(i>=files.length)return;

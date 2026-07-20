@@ -2,13 +2,49 @@
   const SESSION_KEY = 'auditoria365-session-v1';
   const HOURS = 8;
   const USERS_KEY = 'auditoria365-managed-users-v1';
+  const ADMIN_ID = 'usr-admin-001';
+  const ADMIN_LOCAL_EMAIL = 'admin@auditoria365.local';
+  const ADMIN_OLD_CLOUD_EMAILS = ['macarriazo@gmail.com'];
+  const ADMIN_CLOUD_EMAIL = 'thor.elpoderoso.esp.technical@gmail.com';
 
   function norm(value){ return String(value || '').trim().toLowerCase(); }
+
+  function migrateManagedUsers(){
+    let stored;
+    try{
+      const raw=localStorage.getItem(USERS_KEY);
+      if(!raw) return false;
+      stored=JSON.parse(raw);
+    }catch{
+      return false;
+    }
+    if(!Array.isArray(stored)) return false;
+
+    const target=norm(ADMIN_CLOUD_EMAIL);
+    const adminIndex=stored.findIndex(u=>u && (u.id===ADMIN_ID || norm(u.email)===norm(ADMIN_LOCAL_EMAIL)));
+    if(adminIndex<0) return false;
+
+    const admin=stored[adminIndex];
+    const current=norm(admin.cloudEmail);
+    if(current===target) return false;
+    if(!ADMIN_OLD_CLOUD_EMAILS.map(norm).includes(current)) return false;
+
+    const targetOwnedByAnother=stored.some((u,index)=>index!==adminIndex && u && (norm(u.cloudEmail)===target || norm(u.email)===target));
+    if(targetOwnedByAnother){
+      console.warn('Auditoria365: no se migra el correo Cloudflare del administrador porque ya está asignado a otro usuario.');
+      return false;
+    }
+
+    stored[adminIndex]={...admin,cloudEmail:ADMIN_CLOUD_EMAIL};
+    localStorage.setItem(USERS_KEY,JSON.stringify(stored));
+    return true;
+  }
   function isCloudHost(){
     const h = location.hostname.toLowerCase();
     return h === 'auditoria365.opentrust.group';
   }
   function users(){
+    migrateManagedUsers();
     let base=(window.AUDITORIA365_USERS||[]).map(x=>({...x}));
     try{
       let overrides=JSON.parse(localStorage.getItem(USERS_KEY)||'[]');
@@ -150,6 +186,6 @@
   window.A365Auth={
     read,login,loginCloud,cloudIdentity,userForCloudEmail,isCloudHost,logout,clearSession,
     can,canClient,canAudit,setContext,requireAuth,listUsers,updateProfile,changePassword,
-    createUser,updateUser,setUserActive,SESSION_KEY
+    createUser,updateUser,setUserActive,migrateManagedUsers,SESSION_KEY
   };
 })();
