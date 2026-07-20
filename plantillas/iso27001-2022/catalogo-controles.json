@@ -1,0 +1,538 @@
+{
+  "id": "iso27001-2022",
+  "name": "ISO/IEC 27001:2022",
+  "short": "ISO 27001",
+  "description": "Sistema de Gestión de Seguridad de la Información",
+  "sections": [
+    {
+      "id": "4",
+      "title": "4. Contexto de la organización",
+      "controls": [
+        [
+          "4.1",
+          "Comprensión de la organización y su contexto"
+        ],
+        [
+          "4.2",
+          "Necesidades y expectativas de las partes interesadas"
+        ],
+        [
+          "4.3",
+          "Determinación del alcance del SGSI"
+        ],
+        [
+          "4.4",
+          "Sistema de gestión de seguridad de la información"
+        ]
+      ]
+    },
+    {
+      "id": "5",
+      "title": "5. Liderazgo",
+      "controls": [
+        [
+          "5.1",
+          "Liderazgo y compromiso"
+        ],
+        [
+          "5.2",
+          "Política"
+        ],
+        [
+          "5.3",
+          "Roles, responsabilidades y autoridades"
+        ]
+      ]
+    },
+    {
+      "id": "6",
+      "title": "6. Planificación",
+      "controls": [
+        [
+          "6.1",
+          "Acciones para abordar riesgos y oportunidades"
+        ],
+        [
+          "6.2",
+          "Objetivos de seguridad de la información"
+        ],
+        [
+          "6.3",
+          "Planificación de cambios"
+        ]
+      ]
+    },
+    {
+      "id": "7",
+      "title": "7. Apoyo",
+      "controls": [
+        [
+          "7.1",
+          "Recursos"
+        ],
+        [
+          "7.2",
+          "Competencia"
+        ],
+        [
+          "7.3",
+          "Toma de conciencia"
+        ],
+        [
+          "7.4",
+          "Comunicación"
+        ],
+        [
+          "7.5",
+          "Información documentada"
+        ]
+      ]
+    },
+    {
+      "id": "8",
+      "title": "8. Operación",
+      "controls": [
+        [
+          "8.1",
+          "Planificación y control operacional"
+        ],
+        [
+          "8.2",
+          "Evaluación de riesgos de seguridad de la información"
+        ],
+        [
+          "8.3",
+          "Tratamiento de riesgos de seguridad de la información"
+        ]
+      ]
+    },
+    {
+      "id": "9",
+      "title": "9. Evaluación del desempeño",
+      "controls": [
+        [
+          "9.1",
+          "Seguimiento, medición, análisis y evaluación"
+        ],
+        [
+          "9.2",
+          "Auditoría interna"
+        ],
+        [
+          "9.3",
+          "Revisión por la dirección"
+        ]
+      ]
+    },
+    {
+      "id": "10",
+      "title": "10. Mejora",
+      "controls": [
+        [
+          "10.1",
+          "Mejora continua"
+        ],
+        [
+          "10.2",
+          "No conformidad y acción correctiva"
+        ]
+      ]
+    },
+    {
+      "id": "A5",
+      "title": "Anexo A.5 Controles organizativos",
+      "controls": [
+        [
+          "A.5.1",
+          "Políticas de seguridad de la información"
+        ],
+        [
+          "A.5.2",
+          "Roles y responsabilidades de seguridad"
+        ],
+        [
+          "A.5.3",
+          "Segregación de funciones"
+        ],
+        [
+          "A.5.4",
+          "Responsabilidades de la dirección"
+        ],
+        [
+          "A.5.5",
+          "Contacto con autoridades"
+        ],
+        [
+          "A.5.6",
+          "Contacto con grupos de interés"
+        ],
+        [
+          "A.5.7",
+          "Inteligencia de amenazas"
+        ],
+        [
+          "A.5.8",
+          "Seguridad en la gestión de proyectos"
+        ],
+        [
+          "A.5.9",
+          "Inventario de activos"
+        ],
+        [
+          "A.5.10",
+          "Uso aceptable de activos"
+        ],
+        [
+          "A.5.11",
+          "Devolución de activos"
+        ],
+        [
+          "A.5.12",
+          "Clasificación de la información"
+        ],
+        [
+          "A.5.13",
+          "Etiquetado de la información"
+        ],
+        [
+          "A.5.14",
+          "Transferencia de información"
+        ],
+        [
+          "A.5.15",
+          "Control de acceso"
+        ],
+        [
+          "A.5.16",
+          "Gestión de identidades"
+        ],
+        [
+          "A.5.17",
+          "Información de autenticación"
+        ],
+        [
+          "A.5.18",
+          "Derechos de acceso"
+        ],
+        [
+          "A.5.19",
+          "Seguridad en relaciones con proveedores"
+        ],
+        [
+          "A.5.20",
+          "Seguridad en acuerdos con proveedores"
+        ],
+        [
+          "A.5.21",
+          "Cadena de suministro TIC"
+        ],
+        [
+          "A.5.22",
+          "Seguimiento y cambios de servicios de proveedores"
+        ],
+        [
+          "A.5.23",
+          "Uso de servicios cloud"
+        ],
+        [
+          "A.5.24",
+          "Planificación de incidentes"
+        ],
+        [
+          "A.5.25",
+          "Evaluación de eventos de seguridad"
+        ],
+        [
+          "A.5.26",
+          "Respuesta a incidentes"
+        ],
+        [
+          "A.5.27",
+          "Aprendizaje de incidentes"
+        ],
+        [
+          "A.5.28",
+          "Recopilación de evidencias"
+        ],
+        [
+          "A.5.29",
+          "Seguridad durante interrupciones"
+        ],
+        [
+          "A.5.30",
+          "Preparación TIC para continuidad"
+        ],
+        [
+          "A.5.31",
+          "Requisitos legales y contractuales"
+        ],
+        [
+          "A.5.32",
+          "Derechos de propiedad intelectual"
+        ],
+        [
+          "A.5.33",
+          "Protección de registros"
+        ],
+        [
+          "A.5.34",
+          "Privacidad y protección de PII"
+        ],
+        [
+          "A.5.35",
+          "Revisión independiente"
+        ],
+        [
+          "A.5.36",
+          "Cumplimiento de políticas y normas"
+        ],
+        [
+          "A.5.37",
+          "Procedimientos operativos documentados"
+        ]
+      ]
+    },
+    {
+      "id": "A6",
+      "title": "Anexo A.6 Controles de personas",
+      "controls": [
+        [
+          "A.6.1",
+          "Selección"
+        ],
+        [
+          "A.6.2",
+          "Términos y condiciones de empleo"
+        ],
+        [
+          "A.6.3",
+          "Concienciación y formación"
+        ],
+        [
+          "A.6.4",
+          "Proceso disciplinario"
+        ],
+        [
+          "A.6.5",
+          "Responsabilidades tras cese o cambio"
+        ],
+        [
+          "A.6.6",
+          "Acuerdos de confidencialidad"
+        ],
+        [
+          "A.6.7",
+          "Trabajo remoto"
+        ],
+        [
+          "A.6.8",
+          "Notificación de eventos de seguridad"
+        ]
+      ]
+    },
+    {
+      "id": "A7",
+      "title": "Anexo A.7 Controles físicos",
+      "controls": [
+        [
+          "A.7.1",
+          "Perímetros de seguridad física"
+        ],
+        [
+          "A.7.2",
+          "Entrada física"
+        ],
+        [
+          "A.7.3",
+          "Protección de oficinas e instalaciones"
+        ],
+        [
+          "A.7.4",
+          "Supervisión de seguridad física"
+        ],
+        [
+          "A.7.5",
+          "Protección frente a amenazas físicas"
+        ],
+        [
+          "A.7.6",
+          "Trabajo en áreas seguras"
+        ],
+        [
+          "A.7.7",
+          "Escritorio y pantalla limpios"
+        ],
+        [
+          "A.7.8",
+          "Ubicación y protección de equipos"
+        ],
+        [
+          "A.7.9",
+          "Seguridad de activos fuera de las instalaciones"
+        ],
+        [
+          "A.7.10",
+          "Medios de almacenamiento"
+        ],
+        [
+          "A.7.11",
+          "Servicios de soporte"
+        ],
+        [
+          "A.7.12",
+          "Seguridad del cableado"
+        ],
+        [
+          "A.7.13",
+          "Mantenimiento de equipos"
+        ],
+        [
+          "A.7.14",
+          "Eliminación o reutilización segura de equipos"
+        ]
+      ]
+    },
+    {
+      "id": "A8",
+      "title": "Anexo A.8 Controles tecnológicos",
+      "controls": [
+        [
+          "A.8.1",
+          "Dispositivos de usuario"
+        ],
+        [
+          "A.8.2",
+          "Derechos de acceso privilegiado"
+        ],
+        [
+          "A.8.3",
+          "Restricción de acceso a la información"
+        ],
+        [
+          "A.8.4",
+          "Acceso al código fuente"
+        ],
+        [
+          "A.8.5",
+          "Autenticación segura"
+        ],
+        [
+          "A.8.6",
+          "Gestión de capacidad"
+        ],
+        [
+          "A.8.7",
+          "Protección contra malware"
+        ],
+        [
+          "A.8.8",
+          "Gestión de vulnerabilidades técnicas"
+        ],
+        [
+          "A.8.9",
+          "Gestión de configuración"
+        ],
+        [
+          "A.8.10",
+          "Eliminación de información"
+        ],
+        [
+          "A.8.11",
+          "Enmascaramiento de datos"
+        ],
+        [
+          "A.8.12",
+          "Prevención de fuga de datos"
+        ],
+        [
+          "A.8.13",
+          "Copia de seguridad"
+        ],
+        [
+          "A.8.14",
+          "Redundancia"
+        ],
+        [
+          "A.8.15",
+          "Registro de eventos"
+        ],
+        [
+          "A.8.16",
+          "Actividades de monitorización"
+        ],
+        [
+          "A.8.17",
+          "Sincronización de relojes"
+        ],
+        [
+          "A.8.18",
+          "Uso de utilidades privilegiadas"
+        ],
+        [
+          "A.8.19",
+          "Instalación de software"
+        ],
+        [
+          "A.8.20",
+          "Seguridad de redes"
+        ],
+        [
+          "A.8.21",
+          "Seguridad de servicios de red"
+        ],
+        [
+          "A.8.22",
+          "Segregación de redes"
+        ],
+        [
+          "A.8.23",
+          "Filtrado web"
+        ],
+        [
+          "A.8.24",
+          "Uso de criptografía"
+        ],
+        [
+          "A.8.25",
+          "Ciclo de vida de desarrollo seguro"
+        ],
+        [
+          "A.8.26",
+          "Requisitos de seguridad de aplicaciones"
+        ],
+        [
+          "A.8.27",
+          "Arquitectura segura"
+        ],
+        [
+          "A.8.28",
+          "Codificación segura"
+        ],
+        [
+          "A.8.29",
+          "Pruebas de seguridad"
+        ],
+        [
+          "A.8.30",
+          "Desarrollo externalizado"
+        ],
+        [
+          "A.8.31",
+          "Separación de entornos"
+        ],
+        [
+          "A.8.32",
+          "Gestión de cambios"
+        ],
+        [
+          "A.8.33",
+          "Información de prueba"
+        ],
+        [
+          "A.8.34",
+          "Protección durante pruebas de auditoría"
+        ]
+      ]
+    }
+  ]
+}

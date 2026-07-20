@@ -1,0 +1,3 @@
+A.8.26 - Requisitos de seguridad de aplicaciones
+Sección: Anexo A.8 Controles tecnológicos
+Categoría mínima ENS: No aplica

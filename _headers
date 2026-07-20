@@ -1,0 +1,9 @@
+/*
+  Cache-Control: no-store, max-age=0
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), usb=(), payment=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; frame-src blob:; object-src 'none'; base-uri 'none'; form-action 'self'; connect-src 'self'; worker-src 'none'; media-src blob:; upgrade-insecure-requests

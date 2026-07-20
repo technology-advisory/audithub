@@ -1,0 +1,3 @@
+A.8.2 - Derechos de acceso privilegiado
+Sección: Anexo A.8 Controles tecnológicos
+Categoría mínima ENS: No aplica

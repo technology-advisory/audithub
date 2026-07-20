@@ -1,0 +1,3 @@
+A.8.29 - Pruebas de seguridad
+Sección: Anexo A.8 Controles tecnológicos
+Categoría mínima ENS: No aplica

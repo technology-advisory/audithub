@@ -1,0 +1,3 @@
+op.ext.1 - Contratación y acuerdos de nivel de servicio
+Sección: Marco operacional - Servicios externos, continuidad y monitorización
+Categoría mínima ENS: MEDIA

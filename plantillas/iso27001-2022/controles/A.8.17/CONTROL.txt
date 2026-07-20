@@ -1,0 +1,3 @@
+A.8.17 - Sincronización de relojes
+Sección: Anexo A.8 Controles tecnológicos
+Categoría mínima ENS: No aplica

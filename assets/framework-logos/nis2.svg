@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="NIS2">
+  <defs>
+    <linearGradient id="nis2g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172b52"/>
+      <stop offset="1" stop-color="#315f9f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="218" fill="url(#nis2g)" filter="url(#shadow)"/>
+  <circle cx="256" cy="256" r="199" fill="none" stroke="#6fc5ff" stroke-width="12"/>
+  <path d="M90 310c81-48 251-58 333-15" fill="none" stroke="#ffffff" stroke-opacity=".92" stroke-width="16"/>
+  <text x="256" y="252" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="112" font-weight="800" fill="#fff">NIS2</text>
+  <text x="256" y="354" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="34" font-weight="600" letter-spacing="5" fill="#dceeff">DIRECTIVA UE</text>
+</svg>

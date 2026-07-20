@@ -1,0 +1,186 @@
+{
+  "id": "iso-9001-2015",
+  "name": "ISO 9001:2015",
+  "short": "ISO9001-2015",
+  "description": "Sistema de gestión de la calidad (QMS).",
+  "sections": [
+    {
+      "title": "4. Contexto",
+      "code": "4",
+      "controls": [
+        [
+          "4.1",
+          "Contexto de la organización"
+        ],
+        [
+          "4.2",
+          "Partes interesadas"
+        ],
+        [
+          "4.3",
+          "Alcance del QMS"
+        ],
+        [
+          "4.4",
+          "Procesos del sistema de calidad"
+        ]
+      ]
+    },
+    {
+      "title": "5. Liderazgo",
+      "code": "5",
+      "controls": [
+        [
+          "5.1",
+          "Liderazgo y compromiso"
+        ],
+        [
+          "5.1.2",
+          "Enfoque al cliente"
+        ],
+        [
+          "5.2",
+          "Política de calidad"
+        ],
+        [
+          "5.3",
+          "Roles y responsabilidades"
+        ]
+      ]
+    },
+    {
+      "title": "6. Planificación",
+      "code": "6",
+      "controls": [
+        [
+          "6.1",
+          "Riesgos y oportunidades"
+        ],
+        [
+          "6.2",
+          "Objetivos de calidad"
+        ],
+        [
+          "6.3",
+          "Planificación de cambios"
+        ]
+      ]
+    },
+    {
+      "title": "7. Apoyo",
+      "code": "7",
+      "controls": [
+        [
+          "7.1",
+          "Recursos"
+        ],
+        [
+          "7.1.3",
+          "Infraestructura"
+        ],
+        [
+          "7.1.4",
+          "Ambiente para la operación"
+        ],
+        [
+          "7.1.5",
+          "Recursos de seguimiento y medición"
+        ],
+        [
+          "7.1.6",
+          "Conocimiento organizacional"
+        ],
+        [
+          "7.2",
+          "Competencia"
+        ],
+        [
+          "7.3",
+          "Toma de conciencia"
+        ],
+        [
+          "7.4",
+          "Comunicación"
+        ],
+        [
+          "7.5",
+          "Información documentada"
+        ]
+      ]
+    },
+    {
+      "title": "8. Operación",
+      "code": "8",
+      "controls": [
+        [
+          "8.1",
+          "Planificación y control operacional"
+        ],
+        [
+          "8.2",
+          "Requisitos para productos y servicios"
+        ],
+        [
+          "8.3",
+          "Diseño y desarrollo"
+        ],
+        [
+          "8.4",
+          "Control de procesos y proveedores externos"
+        ],
+        [
+          "8.5",
+          "Producción y provisión del servicio"
+        ],
+        [
+          "8.6",
+          "Liberación de productos y servicios"
+        ],
+        [
+          "8.7",
+          "Control de salidas no conformes"
+        ]
+      ]
+    },
+    {
+      "title": "9. Evaluación del desempeño",
+      "code": "9",
+      "controls": [
+        [
+          "9.1",
+          "Seguimiento, medición, análisis y evaluación"
+        ],
+        [
+          "9.1.2",
+          "Satisfacción del cliente"
+        ],
+        [
+          "9.2",
+          "Auditoría interna"
+        ],
+        [
+          "9.3",
+          "Revisión por la dirección"
+        ]
+      ]
+    },
+    {
+      "title": "10. Mejora",
+      "code": "10",
+      "controls": [
+        [
+          "10.1",
+          "Generalidades"
+        ],
+        [
+          "10.2",
+          "No conformidad y acción correctiva"
+        ],
+        [
+          "10.3",
+          "Mejora continua"
+        ]
+      ]
+    }
+  ]
+}

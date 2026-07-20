@@ -1,0 +1,3 @@
+A.8.34 - Protección durante pruebas de auditoría
+Sección: Anexo A.8 Controles tecnológicos
+Categoría mínima ENS: No aplica

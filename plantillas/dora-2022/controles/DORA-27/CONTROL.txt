@@ -1,0 +1,3 @@
+DORA-27 - Requisitos para probadores TLPT
+Sección: Pruebas de resiliencia operativa
+Categoría mínima ENS: No aplica

@@ -1,0 +1,3 @@
+A.6.8 - Notificación de eventos de seguridad
+Sección: Anexo A.6 Controles de personas
+Categoría mínima ENS: No aplica

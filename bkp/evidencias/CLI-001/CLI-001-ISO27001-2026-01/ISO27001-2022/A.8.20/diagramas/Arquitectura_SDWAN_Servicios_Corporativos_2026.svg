@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F7FAFF"/><stop offset="100%" stop-color="#EEF4FA"/></linearGradient>
+  <linearGradient id="hd" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#10294D"/><stop offset="100%" stop-color="#1D4B80"/></linearGradient>
+  <filter id="sh"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#A0B1C4" flood-opacity=".16"/></filter>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#20324D"/></marker>
+  <style>
+    .box { fill:#fff; stroke:#23384F; stroke-width:2; rx:18; }
+    .box2 { fill:#F8FBFF; stroke:#0FA67A; stroke-width:3; rx:18; }
+    .title { font: 800 28px Inter,Segoe UI,Arial; fill:#0F172A; }
+    .sub { font: 400 18px Inter,Segoe UI,Arial; fill:#4B5C71; }
+    .cap { font: 800 16px Inter,Segoe UI,Arial; fill:#fff; }
+    .tx { font: 600 18px Inter,Segoe UI,Arial; fill:#283548; }
+    .txs { font: 400 16px Inter,Segoe UI,Arial; fill:#55667A; }
+    .note { font: 600 16px Inter,Segoe UI,Arial; fill:#0E8B64; }
+    .warn { font: 600 16px Inter,Segoe UI,Arial; fill:#D6452F; }
+  </style>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg)"/>
+<g filter="url(#sh)"><rect x="30" y="24" width="1540" height="852" rx="34" fill="#fff"/></g>
+<rect x="30" y="24" width="1540" height="138" rx="34" fill="url(#hd)"/>
+<rect x="30" y="151" width="1540" height="8" fill="#16B5C9"/>
+<text x="72" y="88" font-family="Inter,Segoe UI,Arial" font-size="46" font-weight="850" fill="#fff">Arquitectura SD-WAN y servicios corporativos</text>
+<text x="72" y="126" font-family="Inter,Segoe UI,Arial" font-size="21" fill="#D9E7FA">Diseño de demostración · sedes, backbone cloud, seguridad y monitorización centralizada</text>
+
+<rect class="box" x="86" y="240" width="260" height="250"/><rect x="86" y="240" width="260" height="54" fill="#0F1220"/><text class="cap" x="122" y="275">SEDE MADRID · 172.18.10.0/24</text>
+<text class="tx" x="120" y="340">Usuarios + WiFi Corp</text><text class="txs" x="120" y="374">Switch core · NAC 802.1X</text><text class="txs" x="120" y="406">Impresión aislada · VLAN IoT</text><text class="note" x="120" y="454">SD-WAN edge primario</text>
+<rect class="box" x="86" y="560" width="260" height="170"/><rect x="86" y="560" width="260" height="54" fill="#121723"/><text class="cap" x="128" y="595">SEDE LISBOA · 172.18.20.0/24</text><text class="txs" x="120" y="650">Operaciones · Voz IP · VLAN invitados</text><text class="note" x="120" y="690">SD-WAN edge secundario</text>
+
+<rect class="box2" x="500" y="214" width="340" height="520"/><text class="title" x="565" y="275">BACKBONE CLOUD</text>
+<rect class="box" x="550" y="318" width="240" height="90"/><text class="tx" x="611" y="370">Orquestador SD-WAN</text><text class="txs" x="602" y="395">políticas y rutas</text>
+<rect class="box" x="550" y="438" width="240" height="90"/><text class="tx" x="629" y="488">NGFW</text><text class="txs" x="592" y="513">IPS · filtrado · TLS</text>
+<rect class="box" x="550" y="558" width="240" height="90"/><text class="tx" x="608" y="607">Secure Web Gateway</text><text class="txs" x="610" y="632">SaaS y navegación</text>
+
+<rect class="box" x="1010" y="194" width="380" height="150"/><rect x="1010" y="194" width="380" height="54" fill="#11161F"/><text class="cap" x="1090" y="229">ZONA APLICACIONES CRÍTICAS</text><text class="tx" x="1060" y="286">ERP · BI · Gestión documental</text><text class="txs" x="1060" y="320">acceso por microsegmentación</text>
+<rect class="box" x="1010" y="386" width="380" height="150"/><rect x="1010" y="386" width="380" height="54" fill="#11161F"/><text class="cap" x="1110" y="421">SERVICIOS COMPARTIDOS</text><text class="tx" x="1060" y="478">DNS privado · PKI · Backup</text><text class="txs" x="1060" y="512">logs a SIEM · cifrado</text>
+<rect class="box" x="1010" y="580" width="380" height="150"/><rect x="1010" y="580" width="380" height="54" fill="#11161F"/><text class="cap" x="1110" y="615">OPERACIONES Y SEGURIDAD</text><text class="tx" x="1060" y="672">SIEM · SOAR · Bastion</text><text class="txs" x="1060" y="706">PAM · escáner de vulnerabilidades</text>
+
+<line x1="346" y1="360" x2="500" y2="360" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="346" y1="646" x2="500" y2="646" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="840" y1="360" x2="1010" y2="270" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="840" y1="486" x2="1010" y2="462" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="840" y1="604" x2="1010" y2="654" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<text class="note" x="386" y="342">túneles IPsec</text><text class="note" x="386" y="628">MPLS de respaldo</text><text class="note" x="888" y="442">política por aplicación</text>
+<text class="warn" x="100" y="800">Todo el tráfico intersede atraviesa los servicios de seguridad del backbone. No hay conectividad plana entre sedes.</text>
+</svg>

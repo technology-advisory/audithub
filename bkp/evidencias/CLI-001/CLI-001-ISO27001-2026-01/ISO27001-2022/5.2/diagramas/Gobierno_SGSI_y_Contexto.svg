@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F6FAFF"/>
+        <stop offset="100%" stop-color="#ECF2F9"/>
+      </linearGradient>
+      <linearGradient id="headGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#112C52"/>
+        <stop offset="100%" stop-color="#163B6D"/>
+      </linearGradient>
+      <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#275EFE"/>
+        <stop offset="100%" stop-color="#17C0E9"/>
+      </linearGradient>
+      <filter id="shadowLg" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#6B7A90" flood-opacity="0.18"/>
+      </filter>
+      <filter id="shadowSm" x="-15%" y="-15%" width="130%" height="130%">
+        <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#90A2B8" flood-opacity="0.16"/>
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#bg)"/>
+    <g filter="url(#shadowLg)">
+      <rect x="32" y="24" width="1536" height="852" rx="34" fill="#ffffff"/>
+    </g>
+    <rect x="32" y="24" width="1536" height="146" rx="34" fill="url(#headGrad)"/>
+    <rect x="32" y="146" width="1536" height="10" fill="url(#accentBar)"/>
+    <text x="72" y="92" font-family="Inter,Segoe UI,Arial" font-size="50" font-weight="850" fill="#ffffff">Gobierno del SGSI y contexto</text>
+    <text x="72" y="130" font-family="Inter,Segoe UI,Arial" font-size="24" font-weight="500" fill="#D8E7FF">Cláusulas 4, 5 y 6 · Dirección, alcance y planificación</text>
+    <rect x="1270" y="54" rx="18" width="230" height="42" fill="#ffffff" opacity="0.14"/>
+    <text x="1385" y="81" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="17" font-weight="700" fill="#ffffff">Evidencia de demostración</text>
+    <g>
+      <rect x="1140" y="212" width="390" height="470" rx="26" fill="#F8FBFF" stroke="#DCE6F2"/>
+      <text x="1170" y="252" font-family="Inter,Segoe UI,Arial" font-size="28" font-weight="800" fill="#0F172A">Puntos clave</text>
+      
+        <rect x="1140" y="272" rx="16" width="390" height="44" fill="#ffffff" stroke="#DBE6F3"/>
+        <circle cx="1164" cy="294" r="6" fill="#17C0E9"/>
+        <text x="1182" y="300" font-family="Inter,Segoe UI,Arial" font-size="18" font-weight="600" fill="#16304F">4.1 Contexto</text>
+        
+        <rect x="1140" y="332" rx="16" width="390" height="44" fill="#ffffff" stroke="#DBE6F3"/>
+        <circle cx="1164" cy="354" r="6" fill="#17C0E9"/>
+        <text x="1182" y="360" font-family="Inter,Segoe UI,Arial" font-size="18" font-weight="600" fill="#16304F">4.2 Partes interesadas</text>
+        
+        <rect x="1140" y="392" rx="16" width="390" height="44" fill="#ffffff" stroke="#DBE6F3"/>
+        <circle cx="1164" cy="414" r="6" fill="#17C0E9"/>
+        <text x="1182" y="420" font-family="Inter,Segoe UI,Arial" font-size="18" font-weight="600" fill="#16304F">4.3 Alcance del SGSI</text>
+        
+        <rect x="1140" y="452" rx="16" width="390" height="44" fill="#ffffff" stroke="#DBE6F3"/>
+        <circle cx="1164" cy="474" r="6" fill="#17C0E9"/>
+        <text x="1182" y="480" font-family="Inter,Segoe UI,Arial" font-size="18" font-weight="600" fill="#16304F">5.1 Liderazgo</text>
+        
+        <rect x="1140" y="512" rx="16" width="390" height="44" fill="#ffffff" stroke="#DBE6F3"/>
+        <circle cx="1164" cy="534" r="6" fill="#17C0E9"/>
+        <text x="1182" y="540" font-family="Inter,Segoe UI,Arial" font-size="18" font-weight="600" fill="#16304F">5.2 Política</text>
+        
+        <rect x="1140" y="572" rx="16" width="390" height="44" fill="#ffffff" stroke="#DBE6F3"/>
+        <circle cx="1164" cy="594" r="6" fill="#17C0E9"/>
+        <text x="1182" y="600" font-family="Inter,Segoe UI,Arial" font-size="18" font-weight="600" fill="#16304F">6.2 Objetivos</text>
+        
+    </g>
+    
+        <g filter="url(#shadowSm)">
+          <rect x="68" y="212" width="535" height="210" rx="24" fill="#ffffff" stroke="#DCE6F2"/>
+        </g>
+        <circle cx="126" cy="264" r="22" fill="#275EFE" opacity="0.12"/>
+        <g transform="translate(104,242)" stroke="#275EFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M22 4l14 5v10c0 8-5.6 14.2-14 18-8.4-3.8-14-10-14-18V9z"/><path d="M15 22l5 5 10-12"/>
+        </g>
+        <text x="158" y="270" font-family="Inter,Segoe UI,Arial" font-size="30" font-weight="800" fill="#0F172A">Contexto y partes interesadas</text>
+        <text x="104" y="314" font-family="Inter,Segoe UI,Arial" font-size="18" fill="#334155"><tspan x="104" dy="26">• Entorno y requisitos identificados</tspan><tspan x="104" dy="26">• Partes interesadas analizadas</tspan><tspan x="104" dy="26">• Alcance formalizado</tspan></text>
+        
+        <g filter="url(#shadowSm)">
+          <rect x="633" y="212" width="535" height="210" rx="24" fill="#ffffff" stroke="#DCE6F2"/>
+        </g>
+        <circle cx="691" cy="264" r="22" fill="#275EFE" opacity="0.12"/>
+        <g transform="translate(669,242)" stroke="#275EFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M22 4l14 5v10c0 8-5.6 14.2-14 18-8.4-3.8-14-10-14-18V9z"/><path d="M15 22l5 5 10-12"/>
+        </g>
+        <text x="723" y="270" font-family="Inter,Segoe UI,Arial" font-size="30" font-weight="800" fill="#0F172A">Liderazgo</text>
+        <text x="669" y="314" font-family="Inter,Segoe UI,Arial" font-size="18" fill="#334155"><tspan x="669" dy="26">• Compromiso de dirección</tspan><tspan x="669" dy="26">• Roles y autoridades definidos</tspan><tspan x="669" dy="26">• Política aprobada</tspan></text>
+        
+        <g filter="url(#shadowSm)">
+          <rect x="68" y="448" width="535" height="210" rx="24" fill="#ffffff" stroke="#DCE6F2"/>
+        </g>
+        <circle cx="126" cy="500" r="22" fill="#275EFE" opacity="0.12"/>
+        <g transform="translate(104,478)" stroke="#275EFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M22 4l14 5v10c0 8-5.6 14.2-14 18-8.4-3.8-14-10-14-18V9z"/><path d="M15 22l5 5 10-12"/>
+        </g>
+        <text x="158" y="506" font-family="Inter,Segoe UI,Arial" font-size="30" font-weight="800" fill="#0F172A">Objetivos</text>
+        <text x="104" y="550" font-family="Inter,Segoe UI,Arial" font-size="18" fill="#334155"><tspan x="104" dy="26">• Métricas y KPIs de seguridad</tspan><tspan x="104" dy="26">• Seguimiento periódico</tspan><tspan x="104" dy="26">• Plan anual de mejora</tspan></text>
+        
+        <g filter="url(#shadowSm)">
+          <rect x="633" y="448" width="535" height="210" rx="24" fill="#ffffff" stroke="#DCE6F2"/>
+        </g>
+        <circle cx="691" cy="500" r="22" fill="#275EFE" opacity="0.12"/>
+        <g transform="translate(669,478)" stroke="#275EFE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M22 4l14 5v10c0 8-5.6 14.2-14 18-8.4-3.8-14-10-14-18V9z"/><path d="M15 22l5 5 10-12"/>
+        </g>
+        <text x="723" y="506" font-family="Inter,Segoe UI,Arial" font-size="30" font-weight="800" fill="#0F172A">Planificación</text>
+        <text x="669" y="550" font-family="Inter,Segoe UI,Arial" font-size="18" fill="#334155"><tspan x="669" dy="26">• Riesgos y oportunidades</tspan><tspan x="669" dy="26">• Gestión del cambio</tspan><tspan x="669" dy="26">• Priorización de acciones</tspan></text>
+        
+    <rect x="68" y="770" width="1462" height="72" rx="24" fill="#F8FBFF" stroke="#DCE6F2"/>
+    <text x="96" y="812" font-family="Inter,Segoe UI,Arial" font-size="18" fill="#4B5E76">OpenTrust Group · Auditoria365 · Evidencia visual de apoyo</text>
+    <g transform="translate(1300,788)">
+      <rect x="0" y="0" width="190" height="38" rx="12" fill="#275EFE" opacity="0.12"/>
+      <text x="95" y="25" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="16" font-weight="800" fill="#275EFE">Uso en presentación</text>
+    </g>
+    </svg>

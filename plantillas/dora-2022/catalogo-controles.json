@@ -1,0 +1,202 @@
+{
+  "id": "dora-2022",
+  "name": "DORA · Reglamento (UE) 2022/2554",
+  "short": "DORA",
+  "description": "Resiliencia operativa digital para entidades financieras y gestión del riesgo TIC.",
+  "sections": [
+    {
+      "title": "Gobierno y organización del riesgo TIC",
+      "code": "gov",
+      "controls": [
+        [
+          "DORA-5",
+          "Gobernanza y organización interna"
+        ],
+        [
+          "DORA-6",
+          "Marco de gestión del riesgo TIC"
+        ],
+        [
+          "DORA-7",
+          "Sistemas, protocolos y herramientas TIC"
+        ],
+        [
+          "DORA-8",
+          "Identificación de activos, funciones y dependencias"
+        ],
+        [
+          "DORA-9",
+          "Protección y prevención"
+        ],
+        [
+          "DORA-10",
+          "Detección de actividades anómalas"
+        ],
+        [
+          "DORA-11",
+          "Respuesta y recuperación"
+        ],
+        [
+          "DORA-12",
+          "Políticas y procedimientos de copias de seguridad"
+        ],
+        [
+          "DORA-13",
+          "Aprendizaje y evolución"
+        ],
+        [
+          "DORA-14",
+          "Comunicación de crisis"
+        ],
+        [
+          "DORA-15",
+          "Armonización de herramientas y procesos"
+        ],
+        [
+          "DORA-16",
+          "Marco simplificado para determinadas entidades"
+        ]
+      ]
+    },
+    {
+      "title": "Incidentes relacionados con las TIC",
+      "code": "inc",
+      "controls": [
+        [
+          "DORA-17",
+          "Proceso de gestión de incidentes TIC"
+        ],
+        [
+          "DORA-18",
+          "Clasificación de incidentes y ciberamenazas"
+        ],
+        [
+          "DORA-19",
+          "Notificación de incidentes graves"
+        ],
+        [
+          "DORA-20",
+          "Contenido y plazos armonizados"
+        ],
+        [
+          "DORA-21",
+          "Centralización de notificaciones"
+        ],
+        [
+          "DORA-22",
+          "Información y supervisión de incidentes"
+        ],
+        [
+          "DORA-23",
+          "Notificación voluntaria de ciberamenazas significativas"
+        ]
+      ]
+    },
+    {
+      "title": "Pruebas de resiliencia operativa",
+      "code": "test",
+      "controls": [
+        [
+          "DORA-24",
+          "Programa general de pruebas de resiliencia"
+        ],
+        [
+          "DORA-25",
+          "Pruebas de herramientas y sistemas TIC"
+        ],
+        [
+          "DORA-26",
+          "Pruebas avanzadas basadas en amenazas TLPT"
+        ],
+        [
+          "DORA-27",
+          "Requisitos para probadores TLPT"
+        ]
+      ]
+    },
+    {
+      "title": "Riesgo de terceros TIC",
+      "code": "third",
+      "controls": [
+        [
+          "DORA-28",
+          "Principios generales de gestión del riesgo de terceros"
+        ],
+        [
+          "DORA-29",
+          "Evaluación preliminar de concentración"
+        ],
+        [
+          "DORA-30",
+          "Cláusulas contractuales esenciales"
+        ],
+        [
+          "DORA-31",
+          "Designación de proveedores críticos"
+        ],
+        [
+          "DORA-32",
+          "Estructura del marco de supervisión"
+        ],
+        [
+          "DORA-33",
+          "Funciones del supervisor principal"
+        ],
+        [
+          "DORA-34",
+          "Coordinación entre supervisores"
+        ],
+        [
+          "DORA-35",
+          "Facultades del supervisor principal"
+        ],
+        [
+          "DORA-36",
+          "Ejercicio de la supervisión"
+        ],
+        [
+          "DORA-37",
+          "Seguimiento de recomendaciones"
+        ],
+        [
+          "DORA-38",
+          "Cooperación internacional"
+        ],
+        [
+          "DORA-39",
+          "Supervisión de subcontratación"
+        ],
+        [
+          "DORA-40",
+          "Tasas de supervisión"
+        ],
+        [
+          "DORA-41",
+          "Seguimiento por autoridades competentes"
+        ],
+        [
+          "DORA-42",
+          "Cooperación entre autoridades"
+        ],
+        [
+          "DORA-43",
+          "Intercambio de información de supervisión"
+        ],
+        [
+          "DORA-44",
+          "Autoridades competentes"
+        ]
+      ]
+    },
+    {
+      "title": "Intercambio de información",
+      "code": "share",
+      "controls": [
+        [
+          "DORA-45",
+          "Acuerdos de intercambio de información sobre ciberamenazas"
+        ]
+      ]
+    }
+  ]
+}

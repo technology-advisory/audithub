@@ -1,0 +1,3 @@
+A.8.18 - Uso de utilidades privilegiadas
+Sección: Anexo A.8 Controles tecnológicos
+Categoría mínima ENS: No aplica

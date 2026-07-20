@@ -1,0 +1,136 @@
+{
+  "id": "nis2-2022",
+  "name": "NIS2 · Directiva (UE) 2022/2555",
+  "short": "NIS2",
+  "description": "Gobernanza y medidas de gestión de riesgos de ciberseguridad para entidades esenciales e importantes.",
+  "sections": [
+    {
+      "title": "Gobernanza y responsabilidad",
+      "code": "gov",
+      "controls": [
+        [
+          "NIS2-20.1",
+          "Aprobación de medidas de gestión de riesgos por el órgano de dirección"
+        ],
+        [
+          "NIS2-20.2",
+          "Supervisión de la implantación de las medidas"
+        ],
+        [
+          "NIS2-20.3",
+          "Formación del órgano de dirección"
+        ],
+        [
+          "NIS2-20.4",
+          "Responsabilidad y rendición de cuentas"
+        ]
+      ]
+    },
+    {
+      "title": "Gestión de riesgos de ciberseguridad",
+      "code": "risk",
+      "controls": [
+        [
+          "NIS2-21.1",
+          "Enfoque integral y proporcionado de gestión de riesgos"
+        ],
+        [
+          "NIS2-21.2.a",
+          "Políticas de análisis de riesgos y seguridad de los sistemas"
+        ],
+        [
+          "NIS2-21.2.b",
+          "Gestión de incidentes"
+        ],
+        [
+          "NIS2-21.2.c",
+          "Continuidad de negocio, copias de seguridad y recuperación"
+        ],
+        [
+          "NIS2-21.2.d",
+          "Seguridad de la cadena de suministro"
+        ],
+        [
+          "NIS2-21.2.e",
+          "Seguridad en adquisición, desarrollo y mantenimiento"
+        ],
+        [
+          "NIS2-21.2.f",
+          "Gestión y divulgación de vulnerabilidades"
+        ],
+        [
+          "NIS2-21.2.g",
+          "Evaluación de la eficacia de las medidas"
+        ],
+        [
+          "NIS2-21.2.h",
+          "Ciberhigiene y formación"
+        ],
+        [
+          "NIS2-21.2.i",
+          "Criptografía y cifrado"
+        ],
+        [
+          "NIS2-21.2.j",
+          "Seguridad de recursos humanos, control de accesos y activos"
+        ],
+        [
+          "NIS2-21.2.k",
+          "MFA, comunicaciones seguras y sistemas de emergencia"
+        ]
+      ]
+    },
+    {
+      "title": "Cadena de suministro",
+      "code": "supply",
+      "controls": [
+        [
+          "NIS2-21.3",
+          "Evaluación de vulnerabilidades de proveedores y prácticas seguras"
+        ],
+        [
+          "NIS2-21.4",
+          "Medidas técnicas y metodológicas proporcionadas"
+        ],
+        [
+          "NIS2-21.5",
+          "Cooperación con autoridades y aplicación de medidas correctoras"
+        ]
+      ]
+    },
+    {
+      "title": "Notificación de incidentes",
+      "code": "inc",
+      "controls": [
+        [
+          "NIS2-23.1",
+          "Proceso de notificación de incidentes significativos"
+        ],
+        [
+          "NIS2-23.4.a",
+          "Alerta temprana en 24 horas"
+        ],
+        [
+          "NIS2-23.4.b",
+          "Notificación de incidente en 72 horas"
+        ],
+        [
+          "NIS2-23.4.c",
+          "Informe intermedio cuando sea requerido"
+        ],
+        [
+          "NIS2-23.4.d",
+          "Informe final en un mes"
+        ],
+        [
+          "NIS2-23.4.e",
+          "Informe de progreso para incidentes en curso"
+        ],
+        [
+          "NIS2-23.5",
+          "Comunicación a destinatarios afectados"
+        ]
+      ]
+    }
+  ]
+}

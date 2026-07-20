@@ -1,0 +1,332 @@
+{
+  "id": "iso-42001-2023",
+  "name": "ISO/IEC 42001:2023",
+  "short": "ISO42001-2023",
+  "description": "Sistema de gestión de inteligencia artificial (AIMS).",
+  "sections": [
+    {
+      "title": "4. Contexto de la organización",
+      "code": "4",
+      "controls": [
+        [
+          "4.1",
+          "Comprensión de la organización y su contexto"
+        ],
+        [
+          "4.2",
+          "Necesidades y expectativas de las partes interesadas"
+        ],
+        [
+          "4.3",
+          "Determinación del alcance del AIMS"
+        ],
+        [
+          "4.4",
+          "Sistema de gestión de IA"
+        ]
+      ]
+    },
+    {
+      "title": "5. Liderazgo",
+      "code": "5",
+      "controls": [
+        [
+          "5.1",
+          "Liderazgo y compromiso"
+        ],
+        [
+          "5.2",
+          "Política de IA"
+        ],
+        [
+          "5.3",
+          "Roles, responsabilidades y autoridades"
+        ]
+      ]
+    },
+    {
+      "title": "6. Planificación",
+      "code": "6",
+      "controls": [
+        [
+          "6.1",
+          "Acciones para abordar riesgos y oportunidades"
+        ],
+        [
+          "6.1.2",
+          "Evaluación de riesgos de IA"
+        ],
+        [
+          "6.1.3",
+          "Tratamiento de riesgos de IA"
+        ],
+        [
+          "6.1.4",
+          "Evaluación de impacto de sistemas de IA"
+        ],
+        [
+          "6.2",
+          "Objetivos de IA y planificación"
+        ],
+        [
+          "6.3",
+          "Planificación de cambios"
+        ]
+      ]
+    },
+    {
+      "title": "7. Apoyo",
+      "code": "7",
+      "controls": [
+        [
+          "7.1",
+          "Recursos"
+        ],
+        [
+          "7.2",
+          "Competencia"
+        ],
+        [
+          "7.3",
+          "Concienciación"
+        ],
+        [
+          "7.4",
+          "Comunicación"
+        ],
+        [
+          "7.5",
+          "Información documentada"
+        ]
+      ]
+    },
+    {
+      "title": "8. Operación",
+      "code": "8",
+      "controls": [
+        [
+          "8.1",
+          "Planificación y control operacional"
+        ],
+        [
+          "8.2",
+          "Evaluación de riesgos operativa de IA"
+        ],
+        [
+          "8.3",
+          "Tratamiento del riesgo de IA"
+        ],
+        [
+          "8.4",
+          "Evaluación de impacto de IA"
+        ]
+      ]
+    },
+    {
+      "title": "9. Evaluación del desempeño",
+      "code": "9",
+      "controls": [
+        [
+          "9.1",
+          "Seguimiento, medición, análisis y evaluación"
+        ],
+        [
+          "9.2",
+          "Auditoría interna"
+        ],
+        [
+          "9.3",
+          "Revisión por la dirección"
+        ]
+      ]
+    },
+    {
+      "title": "10. Mejora",
+      "code": "10",
+      "controls": [
+        [
+          "10.1",
+          "Mejora continua"
+        ],
+        [
+          "10.2",
+          "No conformidad y acción correctiva"
+        ]
+      ]
+    },
+    {
+      "title": "Anexo A · Políticas y gobierno de IA",
+      "code": "A2-A4",
+      "controls": [
+        [
+          "A.2.2",
+          "Política de IA"
+        ],
+        [
+          "A.2.3",
+          "Alineación con otras políticas"
+        ],
+        [
+          "A.2.4",
+          "Revisión de la política"
+        ],
+        [
+          "A.3.2",
+          "Roles y responsabilidades de IA"
+        ],
+        [
+          "A.3.3",
+          "Comunicación de preocupaciones"
+        ],
+        [
+          "A.4.2",
+          "Documentación de recursos"
+        ],
+        [
+          "A.4.3",
+          "Recursos de datos"
+        ],
+        [
+          "A.4.4",
+          "Herramientas y sistemas"
+        ],
+        [
+          "A.4.5",
+          "Recursos de computación"
+        ],
+        [
+          "A.4.6",
+          "Recursos humanos"
+        ]
+      ]
+    },
+    {
+      "title": "Anexo A · Impacto, ciclo de vida y datos",
+      "code": "A5-A7",
+      "controls": [
+        [
+          "A.5.2",
+          "Proceso de evaluación de impacto"
+        ],
+        [
+          "A.5.3",
+          "Documentación de impactos"
+        ],
+        [
+          "A.5.4",
+          "Impacto sobre personas y grupos"
+        ],
+        [
+          "A.5.5",
+          "Impacto social"
+        ],
+        [
+          "A.6.2",
+          "Objetivos de desarrollo responsable"
+        ],
+        [
+          "A.6.3",
+          "Procesos de diseño y desarrollo"
+        ],
+        [
+          "A.6.4",
+          "Requisitos del sistema de IA"
+        ],
+        [
+          "A.6.5",
+          "Diseño y desarrollo"
+        ],
+        [
+          "A.6.6",
+          "Verificación y validación"
+        ],
+        [
+          "A.6.7",
+          "Despliegue"
+        ],
+        [
+          "A.6.8",
+          "Operación y monitorización"
+        ],
+        [
+          "A.6.9",
+          "Documentación técnica"
+        ],
+        [
+          "A.6.10",
+          "Registro de eventos"
+        ],
+        [
+          "A.7.2",
+          "Gestión de datos para IA"
+        ],
+        [
+          "A.7.3",
+          "Adquisición de datos"
+        ],
+        [
+          "A.7.4",
+          "Calidad de datos"
+        ],
+        [
+          "A.7.5",
+          "Procedencia de datos"
+        ],
+        [
+          "A.7.6",
+          "Preparación de datos"
+        ]
+      ]
+    },
+    {
+      "title": "Anexo A · Información, uso y terceros",
+      "code": "A8-A10",
+      "controls": [
+        [
+          "A.8.2",
+          "Información a usuarios"
+        ],
+        [
+          "A.8.3",
+          "Información para partes interesadas"
+        ],
+        [
+          "A.8.4",
+          "Comunicación de incidentes"
+        ],
+        [
+          "A.8.5",
+          "Información para autoridades"
+        ],
+        [
+          "A.9.2",
+          "Procesos para el uso responsable"
+        ],
+        [
+          "A.9.3",
+          "Objetivos de uso responsable"
+        ],
+        [
+          "A.9.4",
+          "Uso previsto"
+        ],
+        [
+          "A.9.5",
+          "Monitorización del uso"
+        ],
+        [
+          "A.10.2",
+          "Asignación de responsabilidades con terceros"
+        ],
+        [
+          "A.10.3",
+          "Proveedores y servicios de IA"
+        ],
+        [
+          "A.10.4",
+          "Clientes y usuarios"
+        ]
+      ]
+    }
+  ]
+}

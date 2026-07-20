@@ -1,0 +1,194 @@
+{
+  "id": "iso-22301-2019",
+  "name": "ISO 22301:2019",
+  "short": "ISO22301-2019",
+  "description": "Sistema de gestión de continuidad de negocio (BCMS).",
+  "sections": [
+    {
+      "title": "4. Contexto",
+      "code": "4",
+      "controls": [
+        [
+          "4.1",
+          "Comprensión de la organización y su contexto"
+        ],
+        [
+          "4.2",
+          "Necesidades y expectativas de partes interesadas"
+        ],
+        [
+          "4.3",
+          "Alcance del BCMS"
+        ],
+        [
+          "4.4",
+          "Sistema de gestión de continuidad"
+        ]
+      ]
+    },
+    {
+      "title": "5. Liderazgo",
+      "code": "5",
+      "controls": [
+        [
+          "5.1",
+          "Liderazgo y compromiso"
+        ],
+        [
+          "5.2",
+          "Política de continuidad"
+        ],
+        [
+          "5.3",
+          "Roles y responsabilidades"
+        ]
+      ]
+    },
+    {
+      "title": "6. Planificación",
+      "code": "6",
+      "controls": [
+        [
+          "6.1",
+          "Riesgos y oportunidades del BCMS"
+        ],
+        [
+          "6.2",
+          "Objetivos de continuidad"
+        ],
+        [
+          "6.3",
+          "Planificación de cambios"
+        ]
+      ]
+    },
+    {
+      "title": "7. Apoyo",
+      "code": "7",
+      "controls": [
+        [
+          "7.1",
+          "Recursos"
+        ],
+        [
+          "7.2",
+          "Competencia"
+        ],
+        [
+          "7.3",
+          "Concienciación"
+        ],
+        [
+          "7.4",
+          "Comunicación"
+        ],
+        [
+          "7.5",
+          "Información documentada"
+        ]
+      ]
+    },
+    {
+      "title": "8. Operación",
+      "code": "8",
+      "controls": [
+        [
+          "8.1",
+          "Planificación y control operacional"
+        ],
+        [
+          "8.2.1",
+          "Análisis de impacto en el negocio y evaluación de riesgos"
+        ],
+        [
+          "8.2.2",
+          "Análisis de impacto en el negocio"
+        ],
+        [
+          "8.2.3",
+          "Evaluación de riesgos de continuidad"
+        ],
+        [
+          "8.3.1",
+          "Estrategias y soluciones de continuidad"
+        ],
+        [
+          "8.3.2",
+          "Identificación de estrategias y soluciones"
+        ],
+        [
+          "8.3.3",
+          "Selección de estrategias y soluciones"
+        ],
+        [
+          "8.3.4",
+          "Requisitos de recursos"
+        ],
+        [
+          "8.3.5",
+          "Implantación de soluciones"
+        ],
+        [
+          "8.4.1",
+          "Planes y procedimientos de continuidad"
+        ],
+        [
+          "8.4.2",
+          "Estructura de respuesta"
+        ],
+        [
+          "8.4.3",
+          "Advertencia y comunicación"
+        ],
+        [
+          "8.4.4",
+          "Planes de continuidad"
+        ],
+        [
+          "8.4.5",
+          "Recuperación"
+        ],
+        [
+          "8.5",
+          "Programa de ejercicios"
+        ],
+        [
+          "8.6",
+          "Evaluación de documentación y capacidades"
+        ]
+      ]
+    },
+    {
+      "title": "9. Evaluación del desempeño",
+      "code": "9",
+      "controls": [
+        [
+          "9.1",
+          "Seguimiento, medición, análisis y evaluación"
+        ],
+        [
+          "9.2",
+          "Auditoría interna"
+        ],
+        [
+          "9.3",
+          "Revisión por la dirección"
+        ]
+      ]
+    },
+    {
+      "title": "10. Mejora",
+      "code": "10",
+      "controls": [
+        [
+          "10.1",
+          "No conformidad y acción correctiva"
+        ],
+        [
+          "10.2",
+          "Mejora continua"
+        ]
+      ]
+    }
+  ]
+}

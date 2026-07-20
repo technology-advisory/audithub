@@ -1,0 +1,3 @@
+A.8.7 - Protección contra malware
+Sección: Anexo A.8 Controles tecnológicos
+Categoría mínima ENS: No aplica

@@ -1,0 +1,372 @@
+{
+  "id": "ens-2022",
+  "name": "Esquema Nacional de Seguridad (ENS) 2022",
+  "short": "ENS 2022",
+  "version": "2022",
+  "description": "Medidas del Real Decreto 311/2022 organizadas por marco organizativo, operacional y protección. La demo diferencia perfiles BÁSICA, MEDIA y ALTA sin sustituir el análisis formal de aplicabilidad.",
+  "sections": [
+    {
+      "title": "Marco organizativo",
+      "code": "org",
+      "controls": [
+        [
+          "org.1",
+          "Política de seguridad",
+          "BÁSICA"
+        ],
+        [
+          "org.2",
+          "Normativa de seguridad",
+          "BÁSICA"
+        ],
+        [
+          "org.3",
+          "Procedimientos de seguridad",
+          "BÁSICA"
+        ],
+        [
+          "org.4",
+          "Proceso de autorización",
+          "MEDIA"
+        ]
+      ]
+    },
+    {
+      "title": "Marco operacional - Planificación",
+      "code": "op.pl",
+      "controls": [
+        [
+          "op.pl.1",
+          "Análisis de riesgos",
+          "BÁSICA"
+        ],
+        [
+          "op.pl.2",
+          "Arquitectura de seguridad",
+          "MEDIA"
+        ],
+        [
+          "op.pl.3",
+          "Adquisición de nuevos componentes",
+          "MEDIA"
+        ],
+        [
+          "op.pl.4",
+          "Dimensionamiento y gestión de capacidades",
+          "MEDIA"
+        ]
+      ]
+    },
+    {
+      "title": "Marco operacional - Control de acceso",
+      "code": "op.acc",
+      "controls": [
+        [
+          "op.acc.1",
+          "Identificación",
+          "BÁSICA"
+        ],
+        [
+          "op.acc.2",
+          "Requisitos de acceso",
+          "BÁSICA"
+        ],
+        [
+          "op.acc.3",
+          "Segregación de funciones y tareas",
+          "MEDIA"
+        ],
+        [
+          "op.acc.4",
+          "Proceso de gestión de derechos de acceso",
+          "MEDIA"
+        ],
+        [
+          "op.acc.5",
+          "Mecanismo de autenticación",
+          "MEDIA"
+        ],
+        [
+          "op.acc.6",
+          "Acceso local",
+          "MEDIA"
+        ],
+        [
+          "op.acc.7",
+          "Acceso remoto",
+          "MEDIA"
+        ]
+      ]
+    },
+    {
+      "title": "Marco operacional - Explotación",
+      "code": "op.exp",
+      "controls": [
+        [
+          "op.exp.1",
+          "Inventario de activos",
+          "BÁSICA"
+        ],
+        [
+          "op.exp.2",
+          "Configuración de seguridad",
+          "MEDIA"
+        ],
+        [
+          "op.exp.3",
+          "Gestión de la configuración",
+          "MEDIA"
+        ],
+        [
+          "op.exp.4",
+          "Mantenimiento y actualizaciones de seguridad",
+          "MEDIA"
+        ],
+        [
+          "op.exp.5",
+          "Gestión de cambios",
+          "MEDIA"
+        ],
+        [
+          "op.exp.6",
+          "Protección frente a código dañino",
+          "BÁSICA"
+        ],
+        [
+          "op.exp.7",
+          "Gestión de incidentes",
+          "MEDIA"
+        ],
+        [
+          "op.exp.8",
+          "Registro de actividad",
+          "MEDIA"
+        ],
+        [
+          "op.exp.9",
+          "Registro de la gestión de incidentes",
+          "MEDIA"
+        ],
+        [
+          "op.exp.10",
+          "Protección de claves criptográficas",
+          "ALTA"
+        ]
+      ]
+    },
+    {
+      "title": "Marco operacional - Servicios externos, continuidad y monitorización",
+      "code": "op.ext",
+      "controls": [
+        [
+          "op.ext.1",
+          "Contratación y acuerdos de nivel de servicio",
+          "MEDIA"
+        ],
+        [
+          "op.ext.2",
+          "Gestión diaria de proveedores",
+          "MEDIA"
+        ],
+        [
+          "op.cont.1",
+          "Análisis de impacto",
+          "MEDIA"
+        ],
+        [
+          "op.cont.2",
+          "Plan de continuidad",
+          "MEDIA"
+        ],
+        [
+          "op.cont.3",
+          "Pruebas periódicas de continuidad",
+          "ALTA"
+        ],
+        [
+          "op.mon.1",
+          "Detección de intrusión",
+          "MEDIA"
+        ],
+        [
+          "op.mon.2",
+          "Sistema de métricas",
+          "BÁSICA"
+        ],
+        [
+          "op.mon.3",
+          "Vigilancia",
+          "ALTA"
+        ]
+      ]
+    },
+    {
+      "title": "Medidas de protección - Instalaciones, personal y equipos",
+      "code": "mp",
+      "controls": [
+        [
+          "mp.if.1",
+          "Áreas separadas y control de acceso",
+          "BÁSICA"
+        ],
+        [
+          "mp.if.2",
+          "Identificación de personas",
+          "MEDIA"
+        ],
+        [
+          "mp.if.3",
+          "Acondicionamiento de los locales",
+          "MEDIA"
+        ],
+        [
+          "mp.per.1",
+          "Caracterización del puesto de trabajo",
+          "BÁSICA"
+        ],
+        [
+          "mp.per.2",
+          "Deberes y obligaciones",
+          "BÁSICA"
+        ],
+        [
+          "mp.per.3",
+          "Concienciación",
+          "BÁSICA"
+        ],
+        [
+          "mp.per.4",
+          "Formación",
+          "MEDIA"
+        ],
+        [
+          "mp.eq.1",
+          "Puesto de trabajo despejado",
+          "BÁSICA"
+        ],
+        [
+          "mp.eq.2",
+          "Bloqueo de puesto de trabajo",
+          "BÁSICA"
+        ],
+        [
+          "mp.eq.3",
+          "Protección de dispositivos portátiles",
+          "MEDIA"
+        ]
+      ]
+    },
+    {
+      "title": "Medidas de protección - Comunicaciones, soportes y aplicaciones",
+      "code": "mp.com",
+      "controls": [
+        [
+          "mp.com.1",
+          "Perímetro seguro",
+          "BÁSICA"
+        ],
+        [
+          "mp.com.2",
+          "Protección de la confidencialidad",
+          "MEDIA"
+        ],
+        [
+          "mp.com.3",
+          "Protección de la autenticidad e integridad",
+          "MEDIA"
+        ],
+        [
+          "mp.com.4",
+          "Segregación de redes",
+          "MEDIA"
+        ],
+        [
+          "mp.com.5",
+          "Medios alternativos",
+          "ALTA"
+        ],
+        [
+          "mp.si.1",
+          "Etiquetado de soportes",
+          "BÁSICA"
+        ],
+        [
+          "mp.si.2",
+          "Criptografía",
+          "MEDIA"
+        ],
+        [
+          "mp.si.3",
+          "Custodia",
+          "MEDIA"
+        ],
+        [
+          "mp.sw.1",
+          "Desarrollo de aplicaciones",
+          "MEDIA"
+        ],
+        [
+          "mp.sw.2",
+          "Aceptación y puesta en servicio",
+          "MEDIA"
+        ]
+      ]
+    },
+    {
+      "title": "Medidas de protección - Información y servicios",
+      "code": "mp.info",
+      "controls": [
+        [
+          "mp.info.1",
+          "Datos de carácter personal",
+          "BÁSICA"
+        ],
+        [
+          "mp.info.2",
+          "Calificación de la información",
+          "MEDIA"
+        ],
+        [
+          "mp.info.3",
+          "Cifrado de la información",
+          "MEDIA"
+        ],
+        [
+          "mp.info.4",
+          "Firma electrónica",
+          "MEDIA"
+        ],
+        [
+          "mp.info.5",
+          "Sellos de tiempo",
+          "ALTA"
+        ],
+        [
+          "mp.s.1",
+          "Protección del correo electrónico",
+          "BÁSICA"
+        ],
+        [
+          "mp.s.2",
+          "Protección de servicios web",
+          "MEDIA"
+        ],
+        [
+          "mp.s.3",
+          "Protección frente a denegación de servicio",
+          "MEDIA"
+        ],
+        [
+          "mp.s.4",
+          "Medios alternativos",
+          "ALTA"
+        ]
+      ]
+    }
+  ],
+  "categories": [
+    "BÁSICA",
+    "MEDIA",
+    "ALTA"
+  ]
+}

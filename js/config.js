@@ -1,0 +1,1 @@
+window.AUDITORIA365_CONFIG={environment:'local',authProvider:'local',secretsProvider:'local-encrypted',backupProviders:['local','google-drive','google-cloud-storage','aws-s3','azure-blob','s3-compatible'],cloudApiBaseUrl:'',requireHttpsInCloud:true};

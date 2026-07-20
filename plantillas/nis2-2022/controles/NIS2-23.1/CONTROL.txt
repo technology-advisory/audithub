@@ -1,0 +1,3 @@
+NIS2-23.1 - Proceso de notificación de incidentes significativos
+Sección: Notificación de incidentes
+Categoría mínima ENS: No aplica

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F7FAFF"/><stop offset="100%" stop-color="#EEF4FA"/></linearGradient>
+  <linearGradient id="hd" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#10294D"/><stop offset="100%" stop-color="#1D4B80"/></linearGradient>
+  <filter id="sh"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#A0B1C4" flood-opacity=".16"/></filter>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#20324D"/></marker>
+  <style>
+    .box { fill:#fff; stroke:#23384F; stroke-width:2; rx:18; }
+    .box2 { fill:#F8FBFF; stroke:#0FA67A; stroke-width:3; rx:18; }
+    .title { font: 800 28px Inter,Segoe UI,Arial; fill:#0F172A; }
+    .sub { font: 400 18px Inter,Segoe UI,Arial; fill:#4B5C71; }
+    .cap { font: 800 16px Inter,Segoe UI,Arial; fill:#fff; }
+    .tx { font: 600 18px Inter,Segoe UI,Arial; fill:#283548; }
+    .txs { font: 400 16px Inter,Segoe UI,Arial; fill:#55667A; }
+    .note { font: 600 16px Inter,Segoe UI,Arial; fill:#0E8B64; }
+    .warn { font: 600 16px Inter,Segoe UI,Arial; fill:#D6452F; }
+  </style>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg)"/>
+<g filter="url(#sh)"><rect x="30" y="24" width="1540" height="852" rx="34" fill="#fff"/></g>
+<rect x="30" y="24" width="1540" height="138" rx="34" fill="url(#hd)"/>
+<rect x="30" y="151" width="1540" height="8" fill="#16B5C9"/>
+<text x="72" y="88" font-family="Inter,Segoe UI,Arial" font-size="46" font-weight="850" fill="#fff">Publicación segura de servicios web y DMZ microsegmentada</text>
+<text x="72" y="126" font-family="Inter,Segoe UI,Arial" font-size="21" fill="#D9E7FA">Diseño de demostración · aislamiento entre capas, WAF, APIs y protección de datos</text>
+
+<ellipse cx="170" cy="448" rx="112" ry="58" fill="#fff" stroke="#23384F" stroke-width="3"/><text class="tx" x="106" y="457">INTERNET</text>
+<rect class="box2" x="340" y="390" width="190" height="120"/><text class="tx" x="390" y="448">ANTI-DDoS</text><text class="txs" x="395" y="480">scrubbing</text>
+<rect class="box2" x="630" y="250" width="260" height="120"/><text class="tx" x="717" y="305">WAF</text><text class="txs" x="679" y="338">reglas · bot mgmt</text>
+<rect class="box2" x="630" y="430" width="260" height="120"/><text class="tx" x="678" y="485">API GATEWAY</text><text class="txs" x="675" y="518">OAuth2 · rate limit</text>
+<rect class="box2" x="630" y="610" width="260" height="120"/><text class="tx" x="697" y="666">REVERSE PROXY</text><text class="txs" x="704" y="698">caché · headers</text>
+
+<rect class="box" x="1020" y="180" width="420" height="150"/><rect x="1020" y="180" width="420" height="50" fill="#11161F"/><text class="cap" x="1145" y="212">CAPA WEB</text><text class="tx" x="1080" y="264">Front-end · portal clientes</text><text class="txs" x="1080" y="296">subred aislada · sin secretos</text>
+<rect class="box" x="1020" y="390" width="420" height="150"/><rect x="1020" y="390" width="420" height="50" fill="#11161F"/><text class="cap" x="1140" y="422">CAPA APLICACIÓN</text><text class="tx" x="1080" y="474">microservicios · workers</text><text class="txs" x="1080" y="506">mTLS interno · colas</text>
+<rect class="box" x="1020" y="600" width="420" height="150"/><rect x="1020" y="600" width="420" height="50" fill="#11161F"/><text class="cap" x="1172" y="632">CAPA DATOS</text><text class="tx" x="1080" y="684">PostgreSQL · Redis · Vault</text><text class="txs" x="1080" y="716">private endpoints · cifrado</text>
+
+<line x1="282" y1="448" x2="340" y2="448" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="530" y1="448" x2="630" y2="310" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="530" y1="448" x2="630" y2="490" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="530" y1="448" x2="630" y2="670" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="890" y1="310" x2="1020" y2="255" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="890" y1="490" x2="1020" y2="465" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="890" y1="670" x2="1020" y2="675" stroke="#20324D" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M 1230 330 C 1280 360, 1280 360, 1230 390" fill="none" stroke="#0FA67A" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M 1230 540 C 1280 570, 1280 570, 1230 600" fill="none" stroke="#0FA67A" stroke-width="3" marker-end="url(#arrow)"/>
+<text class="note" x="1180" y="374">solo puertos de aplicación</text><text class="note" x="1165" y="584">sin acceso directo a datos</text>
+<text class="warn" x="92" y="808">La DMZ no mantiene conectividad lateral con la LAN corporativa. Todo acceso de administración se realiza por canal separado de gestión.</text>
+</svg>

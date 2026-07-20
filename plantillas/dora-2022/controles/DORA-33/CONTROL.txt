@@ -1,0 +1,3 @@
+DORA-33 - Funciones del supervisor principal
+Sección: Riesgo de terceros TIC
+Categoría mínima ENS: No aplica
