@@ -99,7 +99,12 @@ async function currentUser(context) {
   const sessionToken = getCookie(context.request, "a365_session");
 
   if (!sessionToken) {
-    return null;
+    const accessEmail = normalizeEmail(context.request.headers.get("Cf-Access-Authenticated-User-Email"));
+    if (!accessEmail) return null;
+    return context.env.DB.prepare(`
+      SELECT id, name, local_login, cloud_email, role, status
+      FROM users WHERE LOWER(cloud_email) = ? AND status = 'active' LIMIT 1
+    `).bind(accessEmail).first();
   }
 
   const tokenHash = await sha256Base64(sessionToken);
@@ -153,6 +158,7 @@ export async function onRequestGet(context) {
           cloud_email AS cloudEmail,
           role,
           status,
+          all_clients AS allClients,
           created_at AS createdAt,
           updated_at AS updatedAt
         FROM users
@@ -160,10 +166,20 @@ export async function onRequestGet(context) {
       `)
       .all();
 
-    return json({
-      ok: true,
-      users: result.results || []
-    });
+    const users = result.results || [];
+    const assignments = await context.env.DB
+      .prepare(`SELECT user_id AS userId, client_id AS clientId FROM user_clients ORDER BY user_id, client_id`)
+      .all();
+    const byUser = new Map();
+    for (const row of assignments.results || []) {
+      if (!byUser.has(row.userId)) byUser.set(row.userId, []);
+      byUser.get(row.userId).push(row.clientId);
+    }
+    for (const item of users) {
+      item.clientIds = item.allClients ? ["*"] : (byUser.get(item.id) || []);
+      delete item.allClients;
+    }
+    return json({ ok: true, users });
   } catch (error) {
     return json(
       {
@@ -211,6 +227,8 @@ export async function onRequestPost(context) {
     const localLogin = normalizeEmail(body?.localLogin);
     const role = String(body?.role || "").trim();
     const password = String(body?.password || "");
+    const clientIds = Array.isArray(body?.clientIds) ? [...new Set(body.clientIds.map(String).filter(Boolean))] : ["*"];
+    const allClients = clientIds.length === 0 || clientIds.includes("*");
 
     if (!name || !cloudEmail || !localLogin || !role || !password) {
       return json(
@@ -277,9 +295,10 @@ export async function onRequestPost(context) {
           cloud_email,
           role,
           status,
-          password_hash
+          password_hash,
+          all_clients
         )
-        VALUES (?, ?, ?, ?, ?, 'active', ?)
+        VALUES (?, ?, ?, ?, ?, 'active', ?, ?)
       `)
       .bind(
         id,
@@ -287,9 +306,17 @@ export async function onRequestPost(context) {
         localLogin,
         cloudEmail,
         role,
-        passwordHash
+        passwordHash,
+        allClients ? 1 : 0
       )
       .run();
+
+    if (!allClients && clientIds.length) {
+      const statements = clientIds.map(clientId => context.env.DB
+        .prepare(`INSERT OR IGNORE INTO user_clients (user_id, client_id) VALUES (?, ?)`)
+        .bind(id, clientId));
+      await context.env.DB.batch(statements);
+    }
 
     return json(
       {
@@ -300,7 +327,8 @@ export async function onRequestPost(context) {
           localLogin,
           cloudEmail,
           role,
-          status: "active"
+          status: "active",
+          clientIds: allClients ? ["*"] : clientIds
         }
       },
       201
@@ -353,6 +381,8 @@ export async function onRequestPut(context) {
     const localLogin = normalizeEmail(body?.localLogin);
     const role = String(body?.role || "").trim();
     const status = String(body?.status || "").trim();
+    const clientIds = Array.isArray(body?.clientIds) ? [...new Set(body.clientIds.map(String).filter(Boolean))] : ["*"];
+    const allClients = clientIds.length === 0 || clientIds.includes("*");
 
     if (!id || !name || !cloudEmail || !localLogin || !role || !status) {
       return json(
@@ -440,6 +470,7 @@ export async function onRequestPut(context) {
           cloud_email = ?,
           role = ?,
           status = ?,
+          all_clients = ?,
           updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
       `)
@@ -449,9 +480,18 @@ export async function onRequestPut(context) {
         cloudEmail,
         role,
         status,
+        allClients ? 1 : 0,
         id
       )
       .run();
+
+    await context.env.DB.prepare(`DELETE FROM user_clients WHERE user_id = ?`).bind(id).run();
+    if (!allClients && clientIds.length) {
+      const statements = clientIds.map(clientId => context.env.DB
+        .prepare(`INSERT OR IGNORE INTO user_clients (user_id, client_id) VALUES (?, ?)`)
+        .bind(id, clientId));
+      await context.env.DB.batch(statements);
+    }
 
     if (status === "disabled") {
       await context.env.DB
@@ -473,7 +513,8 @@ export async function onRequestPut(context) {
         localLogin,
         cloudEmail,
         role,
-        status
+        status,
+        clientIds: allClients ? ["*"] : clientIds
       }
     });
   } catch (error) {
