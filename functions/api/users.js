@@ -318,3 +318,173 @@ export async function onRequestPost(context) {
   }
 }
 
+export async function onRequestPut(context) {
+  try {
+    const current = await currentUser(context);
+
+    if (!current) {
+      return json(
+        { ok: false, message: "Sesión no válida." },
+        401
+      );
+    }
+
+    if (current.role !== "admin") {
+      return json(
+        { ok: false, message: "Acceso reservado al administrador." },
+        403
+      );
+    }
+
+    const contentType = context.request.headers.get("content-type") || "";
+
+    if (!contentType.includes("application/json")) {
+      return json(
+        { ok: false, message: "El contenido debe enviarse como JSON." },
+        415
+      );
+    }
+
+    const body = await context.request.json();
+
+    const id = String(body?.id || "").trim();
+    const name = String(body?.name || "").trim();
+    const cloudEmail = normalizeEmail(body?.cloudEmail);
+    const localLogin = normalizeEmail(body?.localLogin);
+    const role = String(body?.role || "").trim();
+    const status = String(body?.status || "").trim();
+
+    if (!id || !name || !cloudEmail || !localLogin || !role || !status) {
+      return json(
+        { ok: false, message: "Faltan campos obligatorios." },
+        400
+      );
+    }
+
+    if (!isAllowedRole(role)) {
+      return json(
+        { ok: false, message: "Rol no válido." },
+        400
+      );
+    }
+
+    if (!["active", "disabled"].includes(status)) {
+      return json(
+        { ok: false, message: "Estado no válido." },
+        400
+      );
+    }
+
+    const target = await context.env.DB
+      .prepare(`
+        SELECT id, role, status
+        FROM users
+        WHERE id = ?
+        LIMIT 1
+      `)
+      .bind(id)
+      .first();
+
+    if (!target) {
+      return json(
+        { ok: false, message: "Usuario no encontrado." },
+        404
+      );
+    }
+
+    if (id === current.id && status === "disabled") {
+      return json(
+        { ok: false, message: "No puedes desactivar tu propia cuenta." },
+        409
+      );
+    }
+
+    const duplicate = await context.env.DB
+      .prepare(`
+        SELECT
+          CASE
+            WHEN LOWER(local_login) = ? THEN 'local_login'
+            WHEN LOWER(cloud_email) = ? THEN 'cloud_email'
+          END AS duplicate_field
+        FROM users
+        WHERE id <> ?
+          AND (
+            LOWER(local_login) = ?
+            OR LOWER(cloud_email) = ?
+          )
+        LIMIT 1
+      `)
+      .bind(localLogin, cloudEmail, id, localLogin, cloudEmail)
+      .first();
+
+    if (duplicate?.duplicate_field === "local_login") {
+      return json(
+        { ok: false, message: "El login local ya está dado de alta." },
+        409
+      );
+    }
+
+    if (duplicate?.duplicate_field === "cloud_email") {
+      return json(
+        { ok: false, message: "El correo Cloudflare ya está dado de alta." },
+        409
+      );
+    }
+
+    await context.env.DB
+      .prepare(`
+        UPDATE users
+        SET
+          name = ?,
+          local_login = ?,
+          cloud_email = ?,
+          role = ?,
+          status = ?,
+          updated_at = CURRENT_TIMESTAMP
+        WHERE id = ?
+      `)
+      .bind(
+        name,
+        localLogin,
+        cloudEmail,
+        role,
+        status,
+        id
+      )
+      .run();
+
+    if (status === "disabled") {
+      await context.env.DB
+        .prepare(`
+          UPDATE sessions
+          SET revoked_at = CURRENT_TIMESTAMP
+          WHERE user_id = ?
+            AND revoked_at IS NULL
+        `)
+        .bind(id)
+        .run();
+    }
+
+    return json({
+      ok: true,
+      user: {
+        id,
+        name,
+        localLogin,
+        cloudEmail,
+        role,
+        status
+      }
+    });
+  } catch (error) {
+    return json(
+      {
+        ok: false,
+        message: error instanceof Error
+          ? error.message
+          : "Error al actualizar el usuario."
+      },
+      500
+    );
+  }
+}
