@@ -13,3 +13,4 @@ documentos/
 # Archivos temporales
 *.tmp
 *.log
+node_modules/ 
