@@ -32,11 +32,52 @@ cloudCard.classList.toggle('hidden',!cloud);
 localCard.classList.toggle('hidden',cloud);
 cloudLoginButton.onclick=()=>location.assign('app.html');
 if(!cloud){
-  loginForm.onsubmit=async e=>{
-    e.preventDefault();loginError.textContent='Desbloqueando almacén cifrado…';
-    const s=await A365Auth.login(email.value,password.value);
-    if(!s){loginError.textContent='Credenciales incorrectas o almacén cifrado no disponible.';return}
-    loginError.textContent='';location.assign('app.html');
+    loginForm.onsubmit=async e=>{
+    e.preventDefault();
+
+    loginError.textContent='Validando credenciales…';
+
+    try{
+      const response=await fetch('/api/auth-login',{
+        method:'POST',
+        credentials:'same-origin',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+          login:email.value,
+          password:password.value
+        })
+      });
+
+      const result=await response.json();
+
+      if(!response.ok||!result.ok){
+        loginError.textContent=result.message||'Credenciales incorrectas.';
+        return;
+      }
+
+      loginError.textContent='Desbloqueando almacén cifrado…';
+
+      const session=await A365Auth.login(email.value,password.value);
+
+      if(!session){
+        await fetch('/api/auth-logout',{
+          method:'POST',
+          credentials:'same-origin'
+        });
+
+        loginError.textContent=
+          'Las credenciales son válidas, pero no se pudo desbloquear el almacén local.';
+        return;
+      }
+
+      loginError.textContent='';
+      location.assign('app.html');
+    }catch(error){
+      console.error('Error de inicio de sesión',error);
+      loginError.textContent='No se pudo conectar con el servicio de autenticación.';
+    }
   };
   if(A365Auth.read()&&A365Crypto.hasKey()) location.replace('app.html');
 }
