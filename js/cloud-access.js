@@ -27,7 +27,32 @@
 
   async function start(){
     if(!A365Auth.isCloudHost()){
-      if(A365Auth.requireAuth()) loadApplication();
+      try{
+        const response=await fetch('/api/auth-session',{
+          method:'GET',
+          credentials:'same-origin',
+          headers:{
+            'Accept':'application/json'
+          }
+        });
+
+        const result=await response.json();
+
+        if(!response.ok||!result.authenticated){
+          A365Auth.clearSession();
+          location.replace('index.html');
+          return;
+        }
+
+        if(A365Auth.requireAuth()){
+          loadApplication();
+        }
+      }catch(error){
+        console.error('No se pudo validar la sesión D1',error);
+        A365Auth.clearSession();
+        location.replace('index.html');
+      }
+
       return;
     }
     try{
