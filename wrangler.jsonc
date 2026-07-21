@@ -2,5 +2,13 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "auditoria365-dev",
   "compatibility_date": "2026-07-21",
-  "pages_build_output_dir": "."
+  "pages_build_output_dir": ".",
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "auditoria365-dev-local",
+      "database_id": "00000000-0000-0000-0000-000000000001"
+    }
+  ]
 }
