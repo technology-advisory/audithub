@@ -5,16 +5,17 @@
   const password=document.getElementById('vaultPassword');
   const error=document.getElementById('cloudError');
 
-  function loadApplication(){
+  async function loadApplication(){
+    await window.A365RemoteData?.bootstrap?.();
     document.getElementById('cloudGate')?.remove();
     const loading=document.getElementById('authorizedLoading');
     if(loading) loading.style.display='grid';
     document.querySelector('link[href*="assets/login.css"]')?.remove();
     const files=[
-      ['script','js/security-backup.js?v=15.45'],
-      ['script','data/data.js?v=15.45'],
-      ['script','js/vendor/xlsx.full.min.js?v=15.45'],
-      ['script','js/app.js?v=15.45']
+      ['script','js/security-backup.js?v=16.3'],
+      ['script','data/data.js?v=16.3'],
+      ['script','js/vendor/xlsx.full.min.js?v=16.3'],
+      ['script','js/app.js?v=16.3']
     ];
     const next=i=>{
       if(i>=files.length)return;
@@ -45,7 +46,8 @@
         }
 
         if(A365Auth.requireAuth()){
-          loadApplication();
+          await A365Auth.prepareRemote?.();
+          await loadApplication();
         }
       }catch(error){
         console.error('No se pudo validar la sesión D1',error);
@@ -67,7 +69,8 @@
       }
       const current=A365Auth.read();
       if(current&&A365Crypto.hasKey()&&String(current.cloudEmail||current.email).toLowerCase()===identity.email){
-        loadApplication(); return;
+        await A365Auth.prepareRemote?.();
+        await loadApplication(); return;
       }
       status.textContent='Identidad validada. Introduce tu clave local para desbloquear el almacén cifrado.';
       unlockForm.classList.remove('hidden');
@@ -76,7 +79,7 @@
         e.preventDefault();error.textContent='Desbloqueando almacén cifrado…';
         try{
           await A365Auth.loginCloud(identity.email,password.value);
-          error.textContent='';loadApplication();
+          error.textContent='';await A365Auth.prepareRemote?.();await loadApplication();
         }catch(ex){
           error.textContent=ex.message==='VAULT_PASSWORD_INVALID'
             ?'La clave de desbloqueo no es correcta.'
