@@ -40,6 +40,61 @@ async function sha256Base64(value) {
   return bytesToBase64(new Uint8Array(digest));
 }
 
+
+function normalizeEmail(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function isAllowedRole(role) {
+  return [
+    "admin",
+    "lead-auditor",
+    "auditor",
+    "client",
+    "read-only"
+  ].includes(role);
+}
+
+function validatePassword(password) {
+  return (
+    password.length >= 10 &&
+    /[A-Z]/.test(password) &&
+    /[a-z]/.test(password) &&
+    /[0-9]/.test(password)
+  );
+}
+
+async function createPasswordHash(password) {
+  const iterations = 210000;
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+
+  const keyMaterial = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(password),
+    "PBKDF2",
+    false,
+    ["deriveBits"]
+  );
+
+  const derivedBits = await crypto.subtle.deriveBits(
+    {
+      name: "PBKDF2",
+      hash: "SHA-256",
+      salt,
+      iterations
+    },
+    keyMaterial,
+    256
+  );
+
+  return [
+    "pbkdf2-sha256",
+    iterations,
+    bytesToBase64(salt),
+    bytesToBase64(new Uint8Array(derivedBits))
+  ].join("$");
+}
+
 async function currentUser(context) {
   const sessionToken = getCookie(context.request, "a365_session");
 
@@ -121,3 +176,145 @@ export async function onRequestGet(context) {
     );
   }
 }
+
+export async function onRequestPost(context) {
+  try {
+    const current = await currentUser(context);
+
+    if (!current) {
+      return json(
+        { ok: false, message: "Sesión no válida." },
+        401
+      );
+    }
+
+    if (current.role !== "admin") {
+      return json(
+        { ok: false, message: "Acceso reservado al administrador." },
+        403
+      );
+    }
+
+    const contentType = context.request.headers.get("content-type") || "";
+
+    if (!contentType.includes("application/json")) {
+      return json(
+        { ok: false, message: "El contenido debe enviarse como JSON." },
+        415
+      );
+    }
+
+    const body = await context.request.json();
+
+    const name = String(body?.name || "").trim();
+    const cloudEmail = normalizeEmail(body?.cloudEmail);
+    const localLogin = normalizeEmail(body?.localLogin);
+    const role = String(body?.role || "").trim();
+    const password = String(body?.password || "");
+
+    if (!name || !cloudEmail || !localLogin || !role || !password) {
+      return json(
+        { ok: false, message: "Faltan campos obligatorios." },
+        400
+      );
+    }
+
+    if (!isAllowedRole(role)) {
+      return json(
+        { ok: false, message: "Rol no válido." },
+        400
+      );
+    }
+
+    if (!validatePassword(password)) {
+      return json(
+        {
+          ok: false,
+          message: "La contraseña debe tener al menos 10 caracteres, con mayúsculas, minúsculas y números."
+        },
+        400
+      );
+    }
+
+    const duplicate = await context.env.DB
+      .prepare(`
+        SELECT
+          CASE
+            WHEN LOWER(local_login) = ? THEN 'local_login'
+            WHEN LOWER(cloud_email) = ? THEN 'cloud_email'
+          END AS duplicate_field
+        FROM users
+        WHERE LOWER(local_login) = ?
+           OR LOWER(cloud_email) = ?
+        LIMIT 1
+      `)
+      .bind(localLogin, cloudEmail, localLogin, cloudEmail)
+      .first();
+
+    if (duplicate?.duplicate_field === "local_login") {
+      return json(
+        { ok: false, message: "El login local ya está dado de alta." },
+        409
+      );
+    }
+
+    if (duplicate?.duplicate_field === "cloud_email") {
+      return json(
+        { ok: false, message: "El correo Cloudflare ya está dado de alta." },
+        409
+      );
+    }
+
+    const id = crypto.randomUUID();
+    const passwordHash = await createPasswordHash(password);
+
+    await context.env.DB
+      .prepare(`
+        INSERT INTO users (
+          id,
+          name,
+          local_login,
+          cloud_email,
+          role,
+          status,
+          password_hash
+        )
+        VALUES (?, ?, ?, ?, ?, 'active', ?)
+      `)
+      .bind(
+        id,
+        name,
+        localLogin,
+        cloudEmail,
+        role,
+        passwordHash
+      )
+      .run();
+
+    return json(
+      {
+        ok: true,
+        user: {
+          id,
+          name,
+          localLogin,
+          cloudEmail,
+          role,
+          status: "active"
+        }
+      },
+      201
+    );
+  } catch (error) {
+    return json(
+      {
+        ok: false,
+        message: error instanceof Error
+          ? error.message
+          : "Error al crear el usuario."
+      },
+      500
+    );
+  }
+}
+
