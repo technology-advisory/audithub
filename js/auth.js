@@ -130,11 +130,25 @@
   }
 
   function clearSession(){ localStorage.removeItem(SESSION_KEY); A365Crypto.clearKey(); }
-  function logout(){
-    clearSession();
+  async function logout(){
     if(isCloudHost()){
+      clearSession();
       location.href='/cdn-cgi/access/logout?returnTo='+encodeURIComponent(location.origin+'/');
-    }else{
+      return;
+    }
+
+    try{
+      await fetch('/api/auth-logout',{
+        method:'POST',
+        credentials:'same-origin',
+        headers:{
+          'Accept':'application/json'
+        }
+      });
+    }catch(error){
+      console.error('No se pudo revocar la sesión D1',error);
+    }finally{
+      clearSession();
       location.href='index.html';
     }
   }
