@@ -1,3 +1,0 @@
-op.exp.10 - Protección de claves criptográficas
-Sección: Marco operacional - Explotación
-Categoría mínima ENS: ALTA

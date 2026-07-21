@@ -1,3 +1,0 @@
-op.cont.3 - Pruebas periódicas de continuidad
-Sección: Marco operacional - Servicios externos, continuidad y monitorización
-Categoría mínima ENS: ALTA

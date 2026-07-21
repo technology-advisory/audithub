@@ -1,3 +1,0 @@
-op.exp.3 - Gestión de la configuración
-Sección: Marco operacional - Explotación
-Categoría mínima ENS: MEDIA

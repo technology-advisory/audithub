@@ -1,3 +1,0 @@
-mp.if.1 - Áreas separadas y control de acceso
-Sección: Medidas de protección - Instalaciones, personal y equipos
-Categoría mínima ENS: BÁSICA

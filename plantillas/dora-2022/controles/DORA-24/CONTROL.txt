@@ -1,3 +1,0 @@
-DORA-24 - Programa general de pruebas de resiliencia
-Sección: Pruebas de resiliencia operativa
-Categoría mínima ENS: No aplica

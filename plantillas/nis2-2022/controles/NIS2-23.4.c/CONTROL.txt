@@ -1,3 +1,0 @@
-NIS2-23.4.c - Informe intermedio cuando sea requerido
-Sección: Notificación de incidentes
-Categoría mínima ENS: No aplica

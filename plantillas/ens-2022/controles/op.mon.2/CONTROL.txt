@@ -1,3 +1,0 @@
-op.mon.2 - Sistema de métricas
-Sección: Marco operacional - Servicios externos, continuidad y monitorización
-Categoría mínima ENS: BÁSICA

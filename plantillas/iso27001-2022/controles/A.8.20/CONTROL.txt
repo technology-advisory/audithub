@@ -1,3 +1,0 @@
-A.8.20 - Seguridad de redes
-Sección: Anexo A.8 Controles tecnológicos
-Categoría mínima ENS: No aplica

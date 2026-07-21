@@ -1,3 +1,0 @@
-DORA-26 - Pruebas avanzadas basadas en amenazas TLPT
-Sección: Pruebas de resiliencia operativa
-Categoría mínima ENS: No aplica

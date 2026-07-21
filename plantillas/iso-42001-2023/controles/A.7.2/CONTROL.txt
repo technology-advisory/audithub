@@ -1,3 +1,0 @@
-A.7.2 - Gestión de datos para IA
-Sección: Anexo A · Impacto, ciclo de vida y datos
-Categoría mínima ENS: No aplica

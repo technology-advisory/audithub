@@ -1,3 +1,0 @@
-org.1 - Política de seguridad
-Sección: Marco organizativo
-Categoría mínima ENS: BÁSICA

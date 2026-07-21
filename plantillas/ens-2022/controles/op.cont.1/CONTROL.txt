@@ -1,3 +1,0 @@
-op.cont.1 - Análisis de impacto
-Sección: Marco operacional - Servicios externos, continuidad y monitorización
-Categoría mínima ENS: MEDIA

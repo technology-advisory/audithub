@@ -1,3 +1,0 @@
-mp.s.3 - Protección frente a denegación de servicio
-Sección: Medidas de protección - Información y servicios
-Categoría mínima ENS: MEDIA

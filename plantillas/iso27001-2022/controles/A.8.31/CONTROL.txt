@@ -1,3 +1,0 @@
-A.8.31 - Separación de entornos
-Sección: Anexo A.8 Controles tecnológicos
-Categoría mínima ENS: No aplica

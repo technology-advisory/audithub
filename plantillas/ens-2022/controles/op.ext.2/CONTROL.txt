@@ -1,3 +1,0 @@
-op.ext.2 - Gestión diaria de proveedores
-Sección: Marco operacional - Servicios externos, continuidad y monitorización
-Categoría mínima ENS: MEDIA

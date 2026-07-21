@@ -1,3 +1,0 @@
-NIS2-23.4.a - Alerta temprana en 24 horas
-Sección: Notificación de incidentes
-Categoría mínima ENS: No aplica

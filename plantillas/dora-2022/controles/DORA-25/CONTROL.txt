@@ -1,3 +1,0 @@
-DORA-25 - Pruebas de herramientas y sistemas TIC
-Sección: Pruebas de resiliencia operativa
-Categoría mínima ENS: No aplica

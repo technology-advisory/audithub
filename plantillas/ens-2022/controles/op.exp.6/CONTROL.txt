@@ -1,3 +1,0 @@
-op.exp.6 - Protección frente a código dañino
-Sección: Marco operacional - Explotación
-Categoría mínima ENS: BÁSICA

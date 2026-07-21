@@ -1,3 +1,0 @@
-op.exp.9 - Registro de la gestión de incidentes
-Sección: Marco operacional - Explotación
-Categoría mínima ENS: MEDIA

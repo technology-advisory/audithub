@@ -1,3 +1,0 @@
-A.5.29 - Seguridad durante interrupciones
-Sección: Anexo A.5 Controles organizativos
-Categoría mínima ENS: No aplica

@@ -1,3 +1,0 @@
-NIS2-23.4.b - Notificación de incidente en 72 horas
-Sección: Notificación de incidentes
-Categoría mínima ENS: No aplica

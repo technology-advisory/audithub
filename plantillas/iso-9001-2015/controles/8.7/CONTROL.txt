@@ -1,3 +1,0 @@
-8.7 - Control de salidas no conformes
-Sección: 8. Operación
-Categoría mínima ENS: No aplica

@@ -1,3 +1,0 @@
-op.pl.1 - Análisis de riesgos
-Sección: Marco operacional - Planificación
-Categoría mínima ENS: BÁSICA

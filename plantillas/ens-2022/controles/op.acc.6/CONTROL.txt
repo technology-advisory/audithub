@@ -1,3 +1,0 @@
-op.acc.6 - Acceso local
-Sección: Marco operacional - Control de acceso
-Categoría mínima ENS: MEDIA

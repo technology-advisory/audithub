@@ -1,0 +1,15 @@
+# Documentos y evidencias
+documentos/
+
+# Datos locales de desarrollo
+.local-data/
+.wrangler/
+
+# Secretos y variables locales
+.env
+.env.*
+.dev.vars
+
+# Archivos temporales
+*.tmp
+*.log

@@ -1,3 +1,0 @@
-op.cont.2 - Plan de continuidad
-Sección: Marco operacional - Servicios externos, continuidad y monitorización
-Categoría mínima ENS: MEDIA

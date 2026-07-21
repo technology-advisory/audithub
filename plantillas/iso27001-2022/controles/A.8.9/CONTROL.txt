@@ -1,3 +1,0 @@
-A.8.9 - Gestión de configuración
-Sección: Anexo A.8 Controles tecnológicos
-Categoría mínima ENS: No aplica

@@ -1,3 +1,0 @@
-A.8.21 - Seguridad de servicios de red
-Sección: Anexo A.8 Controles tecnológicos
-Categoría mínima ENS: No aplica

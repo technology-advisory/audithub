@@ -1,3 +1,0 @@
-A.8.28 - Codificación segura
-Sección: Anexo A.8 Controles tecnológicos
-Categoría mínima ENS: No aplica

@@ -1,3 +1,0 @@
-op.exp.7 - Gestión de incidentes
-Sección: Marco operacional - Explotación
-Categoría mínima ENS: MEDIA

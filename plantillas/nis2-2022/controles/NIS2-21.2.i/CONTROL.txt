@@ -1,3 +1,0 @@
-NIS2-21.2.i - Criptografía y cifrado
-Sección: Gestión de riesgos de ciberseguridad
-Categoría mínima ENS: No aplica

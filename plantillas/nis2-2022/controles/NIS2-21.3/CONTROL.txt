@@ -1,3 +1,0 @@
-NIS2-21.3 - Evaluación de vulnerabilidades de proveedores y prácticas seguras
-Sección: Cadena de suministro
-Categoría mínima ENS: No aplica

@@ -1,3 +1,0 @@
-op.mon.1 - Detección de intrusión
-Sección: Marco operacional - Servicios externos, continuidad y monitorización
-Categoría mínima ENS: MEDIA

@@ -1,3 +1,0 @@
-NIS2-21.2.e - Seguridad en adquisición, desarrollo y mantenimiento
-Sección: Gestión de riesgos de ciberseguridad
-Categoría mínima ENS: No aplica

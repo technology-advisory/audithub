@@ -1,3 +1,0 @@
-op.exp.2 - Configuración de seguridad
-Sección: Marco operacional - Explotación
-Categoría mínima ENS: MEDIA

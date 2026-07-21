@@ -1,3 +1,0 @@
-op.mon.3 - Vigilancia
-Sección: Marco operacional - Servicios externos, continuidad y monitorización
-Categoría mínima ENS: ALTA

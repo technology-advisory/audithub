@@ -1,3 +1,0 @@
-op.pl.3 - Adquisición de nuevos componentes
-Sección: Marco operacional - Planificación
-Categoría mínima ENS: MEDIA
